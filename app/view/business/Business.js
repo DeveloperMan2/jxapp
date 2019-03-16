@@ -1,25 +1,26 @@
 /**
- * Created by winnerlbm on 2019/3/13.
+ * Created by winnerlbm on 2019/3/16.
  */
-Ext.define('jxapp.view.legend.Legend', {
+Ext.define('jxapp.view.business.Business', {
     extend: 'Ext.panel.Panel',
 
     requires: [
-        'jxapp.view.legend.LegendModel',
-        'jxapp.view.legend.LegendController'
+        'jxapp.view.business.BusinessModel',
+        'jxapp.view.business.BusinessController'
     ],
-    title: '图例面板',
+
+    title: '操作面板',
     /*
     Uncomment to give this component an xtype*/
-    xtype: 'legend',
+    xtype: 'business',
 
     viewModel: {
-        type: 'legend'
+        type: 'business'
     },
 
-    controller: 'legend',
+    controller: 'business',
 
-    iconCls: 'fas fa-image',
+    iconCls:'jxapp icon-yewu',
     ui: 'common-panel-ui',
     floating: true,
     border: true,

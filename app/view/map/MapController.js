@@ -13,13 +13,22 @@ Ext.define('jxapp.view.map.MapController', {
     },
     afterrender: function () {
         //地图初始化
-        this.initMap('mapContainerId');
+        this.initMap(conf.map.mapId);
+
+        //底图面板
+        this.createLayerSwitcher(conf.map.mapParentId);
+        //图例面板
+        this.createLegend(conf.map.mapParentId);
+        //业务面板
+        this.createBusiness(conf.map.mapParentId);
     },
     afterlayout: function () {
         //地图重绘
         if (conf.map.instance) {
             conf.map.instance.invalidateSize();
         }
+
+        loUtil.refreshLayout();
     },
     initMap: function (mapid) {
         conf.map.instance = L.map(mapid, {
@@ -27,8 +36,47 @@ Ext.define('jxapp.view.map.MapController', {
             attributionControl: false
         }).fitWorld();
 
-        //底图测试
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(conf.map.instance);
-        conf.map.instance.flyTo(L.latLng(28.23, 117.02), 10, true);//定位到鹰潭市
+        //默认矢量底图
+        mapUtil.switchBaseLayer('vector');
+        conf.map.instance.flyTo(L.latLng(conf.map.mapLocation.Y, conf.map.mapLocation.X), conf.map.mapLocation.ZOOM, true);
+    },
+    //底图面板
+    createLayerSwitcher: function (parentId) {
+        let parentContainer = Ext.getDom(parentId);
+        if (conf.layout.layerSwitcherPanel == null) {
+            conf.layout.layerSwitcherPanel = new Ext.create('widget.layerswitcher', {
+                renderTo: parentContainer,
+                bodyPadding: 0
+            });
+        }
+
+        conf.layout.layerSwitcherPanel.show();
+        loUtil.relayoutPanel(parentContainer, conf.layout.layerSwitcherPanel, conf.layout.layerSwitcherParams);
+    },
+    //图例面板
+    createLegend: function (parentId) {
+        let parentContainer = Ext.getDom(parentId);
+        if (conf.layout.legendPanel == null) {
+            conf.layout.legendPanel = new Ext.create('widget.legend', {
+                renderTo: parentContainer,
+                bodyPadding: 0
+            });
+        }
+
+        conf.layout.legendPanel.show();
+        loUtil.relayoutPanel(parentContainer, conf.layout.legendPanel, conf.layout.legendParams);
+    },
+    //业务面板
+    createBusiness: function (parentId) {
+        let parentContainer = Ext.getDom(parentId);
+        if (conf.layout.businessPanel == null) {
+            conf.layout.businessPanel = new Ext.create('widget.business', {
+                renderTo: parentContainer,
+                bodyPadding: 0
+            });
+        }
+
+        conf.layout.businessPanel.show();
+        loUtil.relayoutPanel(parentContainer, conf.layout.businessPanel, conf.layout.businessParams);
     }
 });

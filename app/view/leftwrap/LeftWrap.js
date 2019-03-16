@@ -31,10 +31,6 @@ Ext.define('jxapp.view.leftwrap.LeftWrap', {
         {
             xtype: 'layercatalog',
             flex: 1
-        },
-        {
-            xtype: 'layerswitcher',
-            height: 100
         }
     ]
 });
