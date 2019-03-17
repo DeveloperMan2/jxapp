@@ -14,11 +14,9 @@ Ext.define('jxapp.view.layerswitcher.LayerSwitcherController', {
         //监听全局鼠标事件
         Ext.getBody().on('mousedown', function (e, t) {
             if (e.within(mbtn.el)) {
-                alert('vector map');
-                //mapUtil.switchBaseLayer('vector');
+                mapUtil.switchBaseLayer('vector');
             } else if (e.within(ibtn.el)) {
-                alert('iamge map');
-                //mapUtil.switchBaseLayer('image');
+                mapUtil.switchBaseLayer('image');
             }
         });
     }

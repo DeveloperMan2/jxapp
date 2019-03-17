@@ -2,7 +2,7 @@
  * Created by winnerlbm on 2019/3/13.
  */
 Ext.define('jxapp.view.layerswitcher.LayerSwitcher', {
-    extend: 'Ext.Container',
+    extend: 'Ext.panel.Panel',
 
     requires: [
         'jxapp.view.layerswitcher.LayerSwitcherModel',
@@ -18,7 +18,8 @@ Ext.define('jxapp.view.layerswitcher.LayerSwitcher', {
     },
 
     controller: 'layerswitcher',
-
+    floating:true,
+    shadow:false,
     layout: {
         type: 'hbox',
         pack: 'center',
@@ -29,15 +30,14 @@ Ext.define('jxapp.view.layerswitcher.LayerSwitcher', {
         {
             xtype: 'image',
             id: 'mapButtonId',
-            width: 80,
+            width: 60,
             height: 50,
-            margin: '0 20 0 0',
             cls: 'mapIconCls'
         },
         {
             xtype: 'image',
             id: 'imgButtonId',
-            width: 80,
+            width: 60,
             height: 50,
             cls: 'imgIconCls'
         }

@@ -29,9 +29,14 @@ Ext.define('jxapp.util.LayoutUtil', {
     relayoutPanel: function (parentContainer, childContainer, floatParams) {
         if (parentContainer && childContainer && floatParams) {
             this.addToLayoutContainer(parentContainer, childContainer, floatParams);
-
             let w = floatParams['w'];
             let h = floatParams['h'];
+            if (w == void 0 && childContainer.getWidth(w) != 2){
+                w = childContainer.getWidth();
+            }
+            if (h == void 0 && childContainer.getHeight(h) != 2){
+                h = childContainer.getHeight();
+            }
 
             let align = floatParams['align'];
             let offsetX = floatParams['gapX'];
@@ -49,9 +54,13 @@ Ext.define('jxapp.util.LayoutUtil', {
                     h = parentContainer.clientHeight * parseFloat(h.substr(0, h.indexOf('%'))) / 100 - offsetY - bottomOffsetY;
                 }
             }
+            if (w !== void 0) {
+                childContainer.setWidth(w);
+            }
+            if (h !== void 0) {
+                childContainer.setHeight(h);
+            }
 
-            childContainer.setWidth(w);
-            childContainer.setHeight(h);
 
             switch (align) {
                 case 'tl': {
@@ -73,6 +82,7 @@ Ext.define('jxapp.util.LayoutUtil', {
                 }
                 case 'br': {
                     offsetX = parentContainer.clientWidth - offsetX - w;
+                    offsetY = parentContainer.clientHeight - h - offsetY;
                     if (bottomOffsetY != null) {
                         offsetY = parentContainer.clientHeight - h - bottomOffsetY;
                     }
