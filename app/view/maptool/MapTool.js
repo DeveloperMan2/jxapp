@@ -16,7 +16,6 @@ Ext.define('jxapp.view.maptool.MapTool', {
     controller: 'maptool',
     floating: true,
     shadow: false,
-    height: 28,
     layout: {
         type: 'hbox',
         pack: 'start',
