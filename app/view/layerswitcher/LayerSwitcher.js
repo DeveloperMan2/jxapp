@@ -18,27 +18,32 @@ Ext.define('jxapp.view.layerswitcher.LayerSwitcher', {
     },
 
     controller: 'layerswitcher',
-    floating:true,
-    shadow:false,
+
     layout: {
         type: 'hbox',
         pack: 'center',
         align: 'middle'
     },
+    ui: 'layerswitcher-panel-ui',
+    floating: true,
+    border: false,
+    shadow: false,
+    plain: true,
     items: [
         /* include child components here */
         {
             xtype: 'image',
             id: 'mapButtonId',
-            width: 60,
-            height: 50,
+            width: 80,
+            height: 60,
+            margin: '0 0 0 0',
             cls: 'mapIconCls'
         },
         {
             xtype: 'image',
             id: 'imgButtonId',
-            width: 60,
-            height: 50,
+            width: 80,
+            height: 60,
             cls: 'imgIconCls'
         }
     ]

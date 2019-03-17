@@ -13,3 +13,12 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
+
+@include extjs-panel-ui(
+        $ui: 'layerswitcher-panel-ui',
+        $ui-header-background-color: $common-transparent,
+        $ui-header-border-width: 0px,
+        $ui-body-background-color: $common-transparent,
+        $ui-border-radius: 0px,
+        $ui-border-width: 0px 0px 0px 0px
+);

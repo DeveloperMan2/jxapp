@@ -3,6 +3,9 @@
  *  styling should be located the view's corresponding scss file.
  */
 $enable-font-awesome: dynamic(true);
+$common-transparent: rgba(255, 255, 255, 0.0);
+$common-color: rgb(33, 150, 243);
+$font-family: '微软雅黑';
 
 
 //鼠标手型
@@ -45,3 +48,13 @@ $enable-font-awesome: dynamic(true);
   color: #29b6f6;
   margin: 0 5px 0 5px;
 }
+
+//-----common ui
+@include extjs-panel-ui(
+        $ui: 'common-panel-ui',
+        $ui-header-background-color: rgba($common-color, 0.8),
+        $ui-header-border-width: 1px,
+        $ui-body-background-color: rgba($common-color, 0.2),
+        $ui-border-radius: 0px,
+        $ui-border-width: 1px 1px 1px 1px
+);

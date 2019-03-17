@@ -70,6 +70,8 @@ Ext.define('jxapp.util.LayoutUtil', {
                 case 'bl': {
                     if (bottomOffsetY != null) {
                         offsetY = parentContainer.clientHeight - h - bottomOffsetY;
+                    } else {
+                        offsetY = parentContainer.clientHeight - h - offsetY;
                     }
 
                     childContainer.el.alignTo(parentContainer, "tl?", [offsetX, offsetY], false);
@@ -85,6 +87,8 @@ Ext.define('jxapp.util.LayoutUtil', {
                     offsetY = parentContainer.clientHeight - h - offsetY;
                     if (bottomOffsetY != null) {
                         offsetY = parentContainer.clientHeight - h - bottomOffsetY;
+                    } else {
+                        offsetY = parentContainer.clientHeight - h - offsetY;
                     }
                     childContainer.el.alignTo(parentContainer, "tl?", [offsetX, offsetY], false);
                     break;
@@ -153,17 +157,14 @@ Ext.define('jxapp.util.LayoutUtil', {
     exitFullScreen: function () {
         if (document.exitFullscreen) {
             document.exitFullscreen();
-        }
-        else if (document.mozCancelFullScreen) {
+        } else if (document.mozCancelFullScreen) {
             document.mozCancelFullScreen();
-        }
-        else if (document.webkitCancelFullScreen) {
+        } else if (document.webkitCancelFullScreen) {
             document.webkitCancelFullScreen();
-        }
-        else if (document.msExitFullscreen) {
+        } else if (document.msExitFullscreen) {
             document.msExitFullscreen();
         }
     }
 });
 
-let  loUtil = new jxapp.util.LayoutUtil();
+let loUtil = new jxapp.util.LayoutUtil();
