@@ -45,6 +45,45 @@ Ext.define('jxapp.util.MapUtil', {
             }
             conf.map.baseLayerGroup = L.layerGroup(baseLayers).addTo(conf.map.instance);
         }
+    },
+    addLayer: function (key) {
+        //初始化业务图组
+        if (conf.map.businessLayerGroup == null) {
+            conf.map.businessLayerGroup = L.layerGroup([]).addTo(conf.map.instance);
+        }
+
+        let params = {};
+
+        function success(response) {
+            let result = Ext.util.JSON.decode(response.responseText);
+            if (result && result.data[key] && result.data[key].value) {
+                let geoLayer = L.geoJSON(result.data[key].value, {
+                    style: function (feature) {
+                        return {color: feature.properties.color};
+                    }
+                }).bindPopup(function (layer) {
+                    return layer.feature.properties.name;
+                });
+
+                conf.map.baseLayerGroup.addLayer(geoLayer);
+
+                if (conf.map.businessLayerMap) {
+                    conf.map.businessLayerMap.add(key, geoLayer);
+                }
+            }
+        }
+
+        function failure(response) {
+
+        }
+
+        ajax.fn.execute(params, 'GET', 'resources/data/' + key + '.json', success, failure);
+    },
+    removeLayer: function (key) {
+        if (conf.map.baseLayerGroup && conf.map.businessLayerMap) {
+            let blayer = conf.map.businessLayerMap.get(key);
+            conf.map.baseLayerGroup.removeLayer(blayer);
+        }
     }
 });
 

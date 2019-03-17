@@ -9,38 +9,23 @@ Ext.define('jxapp.view.main.Main', {
     extend: 'Ext.panel.Panel',
     xtype: 'main',
 
-	requires: [
-		'Ext.plugin.Viewport',
-		'jxapp.util.WrapUtil',
-		'jxapp.view.leftwrap.LeftWrap',
-		'jxapp.view.main.MainController',
-		'jxapp.view.main.MainModel'
-	],
-	controller: 'main',
+    requires: [
+        'Ext.plugin.Viewport',
+        'jxapp.view.main.MainController',
+        'jxapp.view.main.MainModel',
+        'jxapp.view.map.Map'
+    ],
+    controller: 'main',
     viewModel: 'main',
-	layout: {
-	type: 'hbox',
-	pack: 'start',
-	align: 'stretch'
-	},
-	items: [
-		/* include child components here */
-		{
-			xtype:'leftwrap',
-			width:250
-		},
-		{
-			xtype: 'warputil',
-			id: 'module-wrap',
-			reference: 'moduleContainerWrap',
-			flex: 1,
-			layout: {
-			type: 'card',
-			anchor: '100%'
-			},
-			listeners: {
-				render: 'onModuleViewRender'
-			}
-		}
-	]
+    layout: {
+        type: 'hbox',
+        pack: 'start',
+        align: 'stretch'
+    },
+    items: [
+        {
+            xtype: 'map',
+            flex: 1
+        }
+    ]
 });

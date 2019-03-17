@@ -4,45 +4,49 @@
 Ext.define('jxapp.view.layercatalog.LayerCatalog', {
     extend: 'Ext.panel.Panel',
 
-	requires: [
-		'jxapp.view.layercatalog.LayerCatalogController',
-		'jxapp.view.layercatalog.LayerCatalogModel'
-	],
+    requires: [
+        'jxapp.view.layercatalog.LayerCatalogController',
+        'jxapp.view.layercatalog.LayerCatalogModel'
+    ],
 
-	/*
+    /*
     Uncomment to give this component an xtype*/
     xtype: 'layercatalog',
 
     viewModel: {
-    type: 'layercatalog'
+        type: 'layercatalog'
     },
 
     controller: 'layercatalog',
-    title: conf.sys.title,
+    title: '图层面板',
     iconCls: 'far fa-object-group',
     scrollable: 'y',
     margin: '0 0 0 0',
-    border: false,
+    ui: 'common-panel-ui',
+    floating: true,
+    border: true,
+    shadow: false,
+    plain: true,
     items: [
-		{
-			xtype: 'treepanel',
-			id: 'moduleTreeId',
-			checkPropagation: 'both',
-			rootVisible: false,
-			titleCollapse: true,
-			useArrows: true,
-			frame: false,
-			bufferedRenderer: false,
-			animate: true,
-			rowLines: true,
-			columnLines: true,
-			singleExpand: false,
-			expanderOnly: true,
-			expanderFirst: false,
-			itemRipple: true,
-			store: {
-				data: conf.module
-			}
-		}
-	]
+        {
+            xtype: 'treepanel',
+            id: 'moduleTreeId',
+            checkPropagation: 'both',
+            rootVisible: false,
+            titleCollapse: true,
+            useArrows: true,
+            frame: false,
+            bufferedRenderer: false,
+            animate: true,
+            rowLines: true,
+            columnLines: true,
+            singleExpand: false,
+            expanderOnly: true,
+            expanderFirst: false,
+            itemRipple: true,
+            store: {
+                data: conf.catalog
+            }
+        }
+    ]
 });
