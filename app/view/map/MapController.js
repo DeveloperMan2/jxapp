@@ -37,7 +37,6 @@ Ext.define('jxapp.view.map.MapController', {
             attributionControl: false
         }).fitWorld();
 
-        conf.map.instance.flyTo(L.latLng(27.3,115.8), 10, true);//定位到乐安
         //默认矢量底图
         mapUtil.switchBaseLayer('vector');
         conf.map.instance.flyTo(L.latLng(conf.map.mapLocation.Y, conf.map.mapLocation.X), conf.map.mapLocation.ZOOM, true);

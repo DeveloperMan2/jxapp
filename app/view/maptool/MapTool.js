@@ -54,35 +54,6 @@ Ext.define('jxapp.view.maptool.MapTool', {
                 //清空专题地图
 
             }
-        },
-        {
-            xtype: 'segmentedbutton',
-            defaults: {
-                border: false,
-                scale: 'small',
-                ui: 'map-tool-ui'
-            }
-            ,
-            items: [{
-                xtype: 'button',
-                action: 'image',
-                text: '影像',
-                iconCls: 'jz-tool-image'
-            }, {
-                xtype: 'button',
-                action: 'vector',
-                pressed: true,
-                text: '矢量',
-                iconCls: 'jz-tool-vector'
-            }],
-            listeners: {
-                toggle: function (container, button, pressed) {
-                    if (pressed) {
-                       // var action = button['action'];
-                        // mv.fn.switchBaseLayer(action);
-                    }
-                }
-            }
         }
     ]
 });

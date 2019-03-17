@@ -84,7 +84,6 @@ Ext.define('jxapp.util.LayoutUtil', {
                 }
                 case 'br': {
                     offsetX = parentContainer.clientWidth - offsetX - w;
-                    offsetY = parentContainer.clientHeight - h - offsetY;
                     if (bottomOffsetY != null) {
                         offsetY = parentContainer.clientHeight - h - bottomOffsetY;
                     } else {

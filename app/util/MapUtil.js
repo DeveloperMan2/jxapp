@@ -8,6 +8,11 @@ Ext.define('jxapp.util.MapUtil', {
             conf.map.baseLayerGroup.clearLayers();
         }
         let baseLayers = [];
+        if (conf.map.leanBoundLayer == null) {
+            conf.map.leanBoundLayer =new L.KML(conf.map.leanBoundLayerUrl, {
+                async: true
+            });
+        }
         if (action == "image") {
             if (conf.map.imageBaseLayer == null && conf.map.imageBaseLayerUrl) {
                 conf.map.imageBaseLayer = L.tileLayer(conf.map.imageBaseLayerUrl, {
@@ -31,6 +36,9 @@ Ext.define('jxapp.util.MapUtil', {
             if (conf.map.labelBaseLayer) {
                 baseLayers.push(conf.map.labelBaseLayer);
             }
+            if (conf.map.leanBoundLayer) {
+                baseLayers.push(conf.map.leanBoundLayer);
+            }
             conf.map.baseLayerGroup = L.layerGroup(baseLayers).addTo(conf.map.instance);
         } else if (action == "vector") {
             if (conf.map.vectorBaseLayer == null && conf.map.vectorBaseLayerUrl) {
@@ -42,6 +50,9 @@ Ext.define('jxapp.util.MapUtil', {
             }
             if (conf.map.vectorBaseLayer) {
                 baseLayers.push(conf.map.vectorBaseLayer);
+            }
+            if (conf.map.leanBoundLayer) {
+                baseLayers.push(conf.map.leanBoundLayer);
             }
             conf.map.baseLayerGroup = L.layerGroup(baseLayers).addTo(conf.map.instance);
         }
