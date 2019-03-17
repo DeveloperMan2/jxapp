@@ -2,7 +2,7 @@
 .mapIconCls {
   @extend .handCls;
   background-image: url("images/jxapp/map.png");
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 
@@ -10,7 +10,7 @@
 .imgIconCls {
   @extend .handCls;
   background-image: url("images/jxapp/image.png");
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 

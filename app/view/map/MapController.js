@@ -23,6 +23,7 @@ Ext.define('jxapp.view.map.MapController', {
         this.createBusiness(conf.map.mapParentId);
         //图层面板
         this.createCatalog(conf.map.mapParentId);
+   this.createMapToolPanel('mapParentContainerId');
     },
     afterlayout: function () {
         //地图重绘
@@ -89,9 +90,22 @@ Ext.define('jxapp.view.map.MapController', {
                 renderTo: parentContainer,
                 bodyPadding: 0
             });
-        }
 
+        }
         conf.layout.catalogPanel.show();
         loUtil.relayoutPanel(parentContainer, conf.layout.catalogPanel, conf.layout.catalogParams);
+   
+    },
+     //图层工具面板
+    createMapToolPanel:function (parentId) {
+        let parentContainer = Ext.getDom(parentId);
+        if (conf.layout.mapToolPanel == null) {
+            conf.layout.mapToolPanel = new Ext.create('widget.maptool', {
+                renderTo: parentContainer,
+                bodyPadding: 0
+            });
+        }
+        conf.layout.mapToolPanel.show();
+        loUtil.relayoutPanel(parentContainer, conf.layout.mapToolPanel, conf.layout.mapToolPanelParams);
     }
 });
