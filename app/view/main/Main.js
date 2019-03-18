@@ -11,10 +11,9 @@ Ext.define('jxapp.view.main.Main', {
 
     requires: [
         'Ext.plugin.Viewport',
-        'jxapp.util.WrapUtil',
-        'jxapp.view.leftwrap.LeftWrap',
         'jxapp.view.main.MainController',
-        'jxapp.view.main.MainModel'
+        'jxapp.view.main.MainModel',
+        'jxapp.view.map.Map'
     ],
     controller: 'main',
     viewModel: 'main',
@@ -24,23 +23,9 @@ Ext.define('jxapp.view.main.Main', {
         align: 'stretch'
     },
     items: [
-        /* include child components here */
         {
-            xtype: 'leftwrap',
-            width: 250
-        },
-        {
-            xtype: 'warputil',
-            id: 'module-wrap',
-            reference: 'moduleContainerWrap',
-            flex: 1,
-            layout: {
-                type: 'card',
-                anchor: '100%'
-            },
-            listeners: {
-                render: 'onModuleViewRender'
-            }
+            xtype: 'map',
+            flex: 1
         }
     ]
 });
