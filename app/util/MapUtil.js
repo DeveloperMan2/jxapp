@@ -4,58 +4,55 @@
 Ext.define('jxapp.util.MapUtil', {
     //底图切换
     switchBaseLayer: function (action) {
-        if (conf.map.baseLayerGroup != null) {
-            conf.map.baseLayerGroup.clearLayers();
-        }
-        let baseLayers = [];
-        if (conf.map.leanBoundLayer == null) {
-            conf.map.leanBoundLayer =new L.KML(conf.map.leanBoundLayerUrl, {
-                async: true
-            });
-        }
+        let oldLayers = null;
         if (action == "image") {
-            if (conf.map.imageBaseLayer == null && conf.map.imageBaseLayerUrl) {
+            if ( conf.map.baseVectorLayerGroup != null) {
+                conf.map.baseVectorLayerGroup.remove();
+            }
+            oldLayers = conf.map.instance._layers;
+            if (conf.map.baseImageLayerGroup == null){
+                conf.map.leanBoundLayer =new L.KML(conf.map.leanBoundLayerUrl, {
+                    async: true
+                });
                 conf.map.imageBaseLayer = L.tileLayer(conf.map.imageBaseLayerUrl, {
                     maxZoom: conf.map.mapLocation.maxZoom,
                     attribution: 'leaflet',
                     id: action + 'layer'
                 });
-            }
-
-            if (conf.map.labelBaseLayer == null && conf.map.labelBaseLayerUrl) {
                 conf.map.labelBaseLayer = L.tileLayer(conf.map.labelBaseLayerUrl, {
                     maxZoom: conf.map.mapLocation.maxZoom,
                     attribution: 'leaflet',
                     id: action + 'layer'
                 });
+                conf.map.baseImageLayerGroup =  L.layerGroup([conf.map.imageBaseLayer,conf.map.labelBaseLayer,conf.map.leanBoundLayer]);
+                conf.map.baseImageLayerGroup.addTo(conf.map.instance);
+            } else {
+                conf.map.baseImageLayerGroup.addTo(conf.map.instance);
             }
-
-            if (conf.map.imageBaseLayerUrl) {
-                baseLayers.push(conf.map.imageBaseLayer);
-            }
-            if (conf.map.labelBaseLayer) {
-                baseLayers.push(conf.map.labelBaseLayer);
-            }
-            if (conf.map.leanBoundLayer) {
-                baseLayers.push(conf.map.leanBoundLayer);
-            }
-            conf.map.baseLayerGroup = L.layerGroup(baseLayers).addTo(conf.map.instance);
         } else if (action == "vector") {
-            if (conf.map.vectorBaseLayer == null && conf.map.vectorBaseLayerUrl) {
+            if ( conf.map.baseImageLayerGroup != null) {
+                conf.map.baseImageLayerGroup.remove();
+            }
+            oldLayers = conf.map.instance._layers;
+            if (conf.map.baseVectorLayerGroup == null) {
+                oldLayers = conf.map.instance.layers;
                 conf.map.vectorBaseLayer = L.tileLayer(conf.map.vectorBaseLayerUrl, {
                     maxZoom: conf.map.mapLocation.maxZoom,
                     attribution: 'leaflet',
                     id: action + 'layer'
                 });
+                conf.map.leanBoundLayer =new L.KML(conf.map.leanBoundLayerUrl, {
+                    async: true
+                });
+                conf.map.baseVectorLayerGroup =  L.layerGroup([conf.map.vectorBaseLayer,conf.map.leanBoundLayer]);
+                conf.map.baseVectorLayerGroup.addTo(conf.map.instance);
+            } else {
+                conf.map.baseVectorLayerGroup.addTo(conf.map.instance);
             }
-            if (conf.map.vectorBaseLayer) {
-                baseLayers.push(conf.map.vectorBaseLayer);
-            }
-            if (conf.map.leanBoundLayer) {
-                baseLayers.push(conf.map.leanBoundLayer);
-            }
-            conf.map.baseLayerGroup = L.layerGroup(baseLayers).addTo(conf.map.instance);
         }
+        Ext.Object.each(oldLayers, function(key, value, countriesItSelf) {
+            value.addTo(conf.map.instance);
+        })
     },
     addLayer: function (key) {
         //初始化业务图组
@@ -71,12 +68,13 @@ Ext.define('jxapp.util.MapUtil', {
                 let geoLayer = L.geoJSON(result.data[key].value, {
                     style: function (feature) {
                         return {color: feature.properties.color};
-                    }
+                    },
+                    id:key,
                 }).bindPopup(function (layer) {
                     return layer.feature.properties.name;
                 });
 
-                conf.map.baseLayerGroup.addLayer(geoLayer);
+                conf.map.businessLayerGroup.addLayer(geoLayer);
 
                 if (conf.map.businessLayerMap) {
                     conf.map.businessLayerMap.add(key, geoLayer);
@@ -91,9 +89,9 @@ Ext.define('jxapp.util.MapUtil', {
         ajax.fn.execute(params, 'GET', 'resources/data/' + key + '.json', success, failure);
     },
     removeLayer: function (key) {
-        if (conf.map.baseLayerGroup && conf.map.businessLayerMap) {
+        if (conf.map.businessLayerGroup && conf.map.businessLayerMap) {
             let blayer = conf.map.businessLayerMap.get(key);
-            conf.map.baseLayerGroup.removeLayer(blayer);
+            conf.map.businessLayerGroup.removeLayer(blayer);
         }
     }
 });

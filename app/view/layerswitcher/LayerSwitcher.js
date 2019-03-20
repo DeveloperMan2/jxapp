@@ -25,6 +25,10 @@ Ext.define('jxapp.view.layerswitcher.LayerSwitcher', {
         align: 'stretch'
     },
     ui: 'layerswitcher-panel-ui',
+    bodyStyle: {
+        background: '#fff',
+        padding: '0px'
+    },
     floating: true,
     border: true,
     shadow: false,
@@ -40,16 +44,27 @@ Ext.define('jxapp.view.layerswitcher.LayerSwitcher', {
                 {
                     xtype: 'image',
                     id: 'mapButtonId',
-                    width: 80,
-                    height: 60,
+                    width: 68,
+                    height: 63,
                     margin: '0 0 0 0',
+                    border: 1,
+                    style: {
+                        borderColor: 'white',
+                        borderStyle: 'solid'
+                    },
                     cls: 'mapIconCls'
                 },
                 {
                     xtype: 'image',
                     id: 'imgButtonId',
-                    width: 80,
-                    height: 60,
+                    width: 68,
+                    height: 63,
+                    margin: '0 0 0 0',
+                    border: 1,
+                    style: {
+                        borderColor: 'white',
+                        borderStyle: 'solid'
+                    },
                     cls: 'imgIconCls'
                 }
             ]

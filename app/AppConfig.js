@@ -16,30 +16,31 @@ Ext.define('jxapp.AppConfig', {
             mapId: 'mapContainerId',
             mapParentId: 'mapParentContainerId',
             mapLocation: {
-                X: 115.8865,
-                Y: 28.6822,
-                ZOOM: 10,
+                X: 115.8,
+                Y: 27.3,
+                ZOOM: 11,
                 minZoom: 3,
                 maxZoom: 20
             },
             instance: null,
-            baseLayerGroup: null,//底图组
+            baseVectorLayerGroup: null,//底图矢量组
+            baseImageLayerGroup: null,//底图影像组
             businessLayerGroup: null,//业务图组
             businessLayerMap: new Ext.util.HashMap(),
-            imageBaseLayerUrl: 'https://tile-a.openstreetmap.fr/hot/{z}/{x}/{y}.png',
-            labelBaseLayerUrl: '',
-            vectorBaseLayerUrl: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-            imageBaseLayer: null,
-            labelBaseLayer: null,
-            vectorBaseLayer: null,
-
-            // imageBaseLayerUrl: 'http://localhost:9000/{z}/{x}/{y}.png',
-            // labelBaseLayerUrl: 'http://localhost:9200/{z}/{x}/{y}.png',
-            // vectorBaseLayerUrl: 'http://localhost:9001/{z}/{x}/{y}.png',
-            // leanBoundLayerUrl:'resources/kml/lean.kml',
+            // imageBaseLayerUrl: 'https://tile-a.openstreetmap.fr/hot/{z}/{x}/{y}.png',
+            // labelBaseLayerUrl: '',
+            // vectorBaseLayerUrl: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
             // imageBaseLayer: null,
             // labelBaseLayer: null,
             // vectorBaseLayer: null,
+
+            imageBaseLayerUrl: 'http://localhost:9000/{z}/{x}/{y}.png',
+            labelBaseLayerUrl: 'http://localhost:9200/{z}/{x}/{y}.png',
+            vectorBaseLayerUrl: 'http://localhost:9001/{z}/{x}/{y}.png',
+            leanBoundLayerUrl:'resources/kml/lean.kml',
+            imageBaseLayer: null,
+            labelBaseLayer: null,
+            vectorBaseLayer: null,
             //乐安县界
             leanBoundLayer: null
         },
@@ -59,7 +60,7 @@ Ext.define('jxapp.AppConfig', {
                 gapX: 320,
                 gapY: 10,//40,
                 //bottomY: 0,
-                w: 160,//数值或百分比，如：100%
+                w: 136,//数值或百分比，如：100%
                 h: 90,//数值或百分比，如：100%
                 align: 'tr'
             },
@@ -102,55 +103,55 @@ Ext.define('jxapp.AppConfig', {
             {
                 text: '水库',
                 key: 'reservoir',
-                iconCls: 'jxapp icon-dazhongxingshuiku',
+                iconCls: 'iconfont icon-dazhongxingshuiku',
                 checked: true,
                 leaf: true
             }, {
                 text: '大坝',
                 key: 'dam',
-                iconCls: 'jxapp icon-daba',
+                iconCls: 'iconfont icon-daba',
                 checked: false,
                 leaf: true
             }, {
                 text: '泵站',
                 key: 'pump',
-                iconCls: 'jxapp icon-xiaoxingbengzhan',
+                iconCls: 'iconfont icon-xiaoxingbengzhan',
                 checked: false,
                 leaf: true
             }, {
                 text: '水闸',
                 key: 'gate',
-                iconCls: 'jxapp icon-dazhongxingshuizha-map',
+                iconCls: 'iconfont icon-dazhongxingshuizha-map',
                 checked: false,
                 leaf: true
             }, {
                 text: '雨量站',
                 key: 'rainstation',
-                iconCls: 'jxapp icon-yuliangzhan',
+                iconCls: 'iconfont icon-yuliangzhan',
                 checked: false,
                 leaf: true
             }, {
                 text: '水位站',
                 key: 'gaugingstation',
-                iconCls: 'jxapp icon-shuiweizhan',
+                iconCls: 'iconfont icon-shuiweizhan',
                 checked: false,
                 leaf: true
             }, {
                 text: '安全监测站',
                 key: 'watchstation',
-                iconCls: 'jxapp icon-zidongjiancezhan',
+                iconCls: 'iconfont icon-zidongjiancezhan',
                 checked: false,
                 leaf: true
             }, {
                 text: '摄像头',
                 key: 'camera',
-                iconCls: 'jxapp icon-shexiangtou',
+                iconCls: 'iconfont icon-shexiangtou',
                 checked: false,
                 leaf: true
             }, {
                 text: '巡检点',
                 key: 'inspectionpoint',
-                iconCls: 'jxapp icon-xunjiandian',
+                iconCls: 'iconfont icon-xunjiandian',
                 checked: false,
                 leaf: true
             }

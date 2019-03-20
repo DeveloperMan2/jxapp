@@ -2,7 +2,7 @@
   "code": 1,
   "message": "请求成功",
   "data": {
-    "reservoir": {
+    "dam": {
       "show": true,
       "value": {
         "type": "FeatureCollection",
@@ -10,7 +10,7 @@
           {
             "type": "Feature",
             "properties": {
-              "name": "坳背水库",
+              "name": "坳背大坝",
               "id": "10330",
               "waterLevel": "5",
               "color": "#FF0000",
@@ -20,15 +20,15 @@
             "geometry": {
               "type": "Point",
               "coordinates": [
-                115.7478822088126,
-                27.27011860494153
+                115.7428822088126,
+                27.21031860494153
               ]
             }
           },
           {
             "type": "Feature",
             "properties": {
-              "name": "东岸水库",
+              "name": "东岸大坝",
               "id": "361025000011",
               "waterLevel": "5",
               "color": "#0000FF",
@@ -38,15 +38,15 @@
             "geometry": {
               "type": "Point",
               "coordinates": [
-                115.8101639735634,
-                27.23053890658802
+                115.8116639735634,
+                27.27035890658802
               ]
             }
           },
           {
             "type": "Feature",
             "properties": {
-              "name": "乌垄坑水库",
+              "name": "乌垄坑大坝",
               "id": "10333",
               "waterLevel": "5",
               "color": "#00FF00",
@@ -56,15 +56,15 @@
             "geometry": {
               "type": "Point",
               "coordinates": [
-                115.8160876046831,
-                27.7322491900460
+                115.8110876046831,
+                27.7622491900460
               ]
             }
           },
           {
             "type": "Feature",
             "properties": {
-              "name": "杏家园水库",
+              "name": "杏家园大坝",
               "id": "361025000012",
               "waterLevel": "5",
               "color": "#FF00FF",
@@ -74,7 +74,7 @@
             "geometry": {
               "type": "Point",
               "coordinates": [
-                115.6960619533847,
+                115.6110619533847,
                 27.36400138311395
               ]
             }
@@ -82,7 +82,7 @@
           {
             "type": "Feature",
             "properties": {
-              "name": "乌泥坑水库",
+              "name": "乌泥坑大坝",
               "id": "361025000013",
               "waterLevel": "5",
               "color": "#FF00FF",
