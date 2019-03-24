@@ -5,8 +5,9 @@ Ext.define('jxapp.view.business.Business', {
     extend: 'Ext.panel.Panel',
 
     requires: [
+        'jxapp.view.business.BusinessController',
         'jxapp.view.business.BusinessModel',
-        'jxapp.view.business.BusinessController'
+        'jxapp.view.mappatrol.MapPatrol'
     ],
 
     title: '操作面板',
@@ -20,7 +21,12 @@ Ext.define('jxapp.view.business.Business', {
 
     controller: 'business',
 
-    iconCls:'jxapp icon-yewu',
+    layout: {
+        type: 'vbox',
+        align: 'stretch'
+    },
+
+    iconCls: 'far fa-object-group',
     ui: 'common-panel-ui',
     floating: true,
     border: true,
@@ -28,5 +34,8 @@ Ext.define('jxapp.view.business.Business', {
     plain: true,
     items: [
         /* include child components here */
+        {
+            xtype: 'mappatrol'
+        }
     ]
 });
