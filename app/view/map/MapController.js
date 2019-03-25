@@ -23,7 +23,7 @@ Ext.define('jxapp.view.map.MapController', {
         this.createBusiness(conf.map.mapParentId);
         //图层面板
         this.createCatalog(conf.map.mapParentId);
-        //this.createMapToolPanel('mapParentContainerId');
+        this.createMapToolPanel(conf.map.mapParentId);
     },
     afterlayout: function () {
         //地图重绘

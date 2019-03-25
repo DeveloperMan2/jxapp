@@ -35,10 +35,8 @@ Ext.define('jxapp.view.maptool.MapTool', {
             text: '测距',
             iconCls: 'jz-tool-fullextent',
             listeners: {
-                added: function (view, ct, index, eOpts) {
-                    L.control.ruler({view: view}).addTo(conf.map.instance);
+                added: "addInitMapTool"
                 }
-            }
         }
         ,
         {
@@ -46,13 +44,7 @@ Ext.define('jxapp.view.maptool.MapTool', {
             tooltip: '清除地图',
             text: '清除',
             iconCls: 'jz-tool-clear',
-            handler: function () {
-                // if (mv.v.measureDistool != null) {
-                // //    mv.v.measureDistool.clearHandler();
-                // }
-                //清空专题地图
-
-            }
+            handler: "clearMapHandler"
         }
     ]
 });

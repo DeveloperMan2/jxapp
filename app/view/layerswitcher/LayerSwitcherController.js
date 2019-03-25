@@ -19,5 +19,12 @@ Ext.define('jxapp.view.layerswitcher.LayerSwitcherController', {
                 mapUtil.switchBaseLayer('image');
             }
         });
+    },
+    boundaryLayerControl: function (el, newValue, oldValue, eOpts) {
+        if (conf.map.businessBoundaryLayerMap) {
+           conf.map.businessBoundaryLayerMap.each(function (key, value, length) {
+                newValue ? conf.map.businessBoundaryLayerGroup.addLayer(value) : conf.map.businessBoundaryLayerGroup.removeLayer(value);
+            })
+        }
     }
 });

@@ -24,9 +24,10 @@ Ext.define('jxapp.controller.AppController', {
                 },
                 'checkchange': function (node, checked, e, eOpts) {
                     let key = node.getData()['key'];
+                    let cls = node.getData()['iconCls'];
                     if (key) {
                         if (checked) {
-                            this.addBusinessLayer(key);
+                            this.addBusinessLayer(key,cls);
                         } else {
                             this.removeBusinessLayer(key);
                         }
@@ -46,13 +47,13 @@ Ext.define('jxapp.controller.AppController', {
         if (conf.catalog) {
             Ext.each(conf.catalog, function (layer) {
                 if (layer['checked']) {
-                    me.addBusinessLayer(layer['key'])
+                    me.addBusinessLayer(layer['key'],layer["iconCls"]);
                 }
             });
         }
     },
-    addBusinessLayer: function (key) {
-        mapUtil.addLayer(key);
+    addBusinessLayer: function (key,cls) {
+        mapUtil.addLayer(key,cls);
     },
     removeBusinessLayer: function (key) {
         mapUtil.removeLayer(key);

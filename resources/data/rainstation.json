@@ -1,0 +1,104 @@
+{
+  "code": 1,
+  "message": "请求成功",
+  "data": {
+    "rainstation": {
+      "show": true,
+      "value": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "坳背站",
+              "id": "10330",
+              "waterLevel": "5",
+              "color": "#FF0000",
+              "dyp": "10",
+              "warn": 1
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                115.7728822088126,
+                27.21231860494153
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "东岸站",
+              "id": "361025000011",
+              "waterLevel": "5",
+              "color": "#0000FF",
+              "dyp": "10",
+              "warn": 1
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                115.8116639735634,
+                27.27435890658802
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "乌垄坑站",
+              "id": "10333",
+              "waterLevel": "5",
+              "color": "#00FF00",
+              "dyp": "10",
+              "warn": 1
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                115.8110876046831,
+                27.7922491900460
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "杏家园站",
+              "id": "361025000012",
+              "waterLevel": "5",
+              "color": "#FF00FF",
+              "dyp": "10",
+              "warn": 1
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                115.6510619533847,
+                27.36400138311395
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "乌泥坑站",
+              "id": "361025000013",
+              "waterLevel": "5",
+              "color": "#FF00FF",
+              "dyp": "10",
+              "warn": 1
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                115.6088852929088,
+                27.29697526272599
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

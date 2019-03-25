@@ -1,0 +1,104 @@
+{
+  "code": 1,
+  "message": "请求成功",
+  "data": {
+    "camera": {
+      "show": true,
+      "value": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "坳背监控",
+              "id": "10330",
+              "waterLevel": "5",
+              "color": "#FF0000",
+              "dyp": "10",
+              "warn": 1
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                115.7928822088126,
+                27.26031860494153
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "东岸监控",
+              "id": "361025000011",
+              "waterLevel": "5",
+              "color": "#0000FF",
+              "dyp": "10",
+              "warn": 1
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                115.7116639735634,
+                27.27035890658802
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "乌垄坑监控",
+              "id": "10333",
+              "waterLevel": "5",
+              "color": "#00FF00",
+              "dyp": "10",
+              "warn": 1
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                115.5110876046831,
+                27.7622491900460
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "杏家园监控",
+              "id": "361025000012",
+              "waterLevel": "5",
+              "color": "#FF00FF",
+              "dyp": "10",
+              "warn": 1
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                115.6110619533847,
+                27.46400138311395
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "乌泥坑监控",
+              "id": "361025000013",
+              "waterLevel": "5",
+              "color": "#FF00FF",
+              "dyp": "10",
+              "warn": 1
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                115.9888852929088,
+                27.29697526272599
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

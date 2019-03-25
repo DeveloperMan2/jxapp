@@ -201,6 +201,10 @@
         {
             "path": "app.js",
             "bundle": true
+        },
+        {
+            "path": "app/AppConfig.js",
+            "bundle": false
         }
     ],
     /**

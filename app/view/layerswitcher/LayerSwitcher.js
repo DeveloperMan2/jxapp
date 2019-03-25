@@ -6,7 +6,11 @@ Ext.define('jxapp.view.layerswitcher.LayerSwitcher', {
 
     requires: [
         'jxapp.view.layerswitcher.LayerSwitcherModel',
-        'jxapp.view.layerswitcher.LayerSwitcherController'
+        'jxapp.view.layerswitcher.LayerSwitcherController',
+        'Ext.Img',
+        'Ext.form.field.Checkbox',
+        'Ext.tree.Panel',
+        'Ext.ux.IFrame',
     ],
 
     /*
@@ -71,8 +75,11 @@ Ext.define('jxapp.view.layerswitcher.LayerSwitcher', {
         },
         {
             xtype:'checkbox',
+            id:"boundaryControl",
             ui: 'layercontroller-checkbox-ui',
-            boxLabel: '划界确权'
+            boxLabel: '划界确权',
+            checked:true,
+            handler:'boundaryLayerControl'
         }
     ]
 });

@@ -15,7 +15,62 @@
               "waterLevel": "5",
               "color": "#FF0000",
               "dyp": "10",
-              "warn": 1
+              "warn": 1,
+              "url":"www.baidu.com",
+              "apoint": {
+                "type":"FeatureCollection",
+                "features": [
+                  {
+                    "type": "Feature",
+                    "properties": {
+                      "name": "坳背水库确权界"
+                    },
+                    "geometry": {
+                      "type": "Polygon",
+                      "coordinates": [
+                        [
+                          [
+                            115.746693,
+                            27.27164
+                          ],
+                          [
+                            115.74601,
+                            27.271015
+                          ],
+                          [
+                            115.745660,
+                            27.2701186
+                          ],
+                          [
+                            115.746250,
+                            27.2687658
+                          ]
+                        ,
+                          [
+                            115.7477073,
+                            27.26828
+                          ]
+                        ,
+                          [
+                            115.7490348316,
+                            27.270118
+                          ]
+                        ,
+                          [
+                            115.748149871,
+                            27.27188166
+                          ]
+                        ,
+                          [
+                            115.74669337549,
+                            27.27164198
+                          ]
+                        ]
+                      ]
+                    }
+                  }
+                ]
+              }
             },
             "geometry": {
               "type": "Point",
@@ -33,7 +88,8 @@
               "waterLevel": "5",
               "color": "#0000FF",
               "dyp": "10",
-              "warn": 1
+              "warn": 1,
+              "url":"www.baidu.com"
             },
             "geometry": {
               "type": "Point",
@@ -51,7 +107,8 @@
               "waterLevel": "5",
               "color": "#00FF00",
               "dyp": "10",
-              "warn": 1
+              "warn": 1,
+              "url":"www.baidu.com"
             },
             "geometry": {
               "type": "Point",
@@ -69,7 +126,8 @@
               "waterLevel": "5",
               "color": "#FF00FF",
               "dyp": "10",
-              "warn": 1
+              "warn": 1,
+              "url":"www.baidu.com"
             },
             "geometry": {
               "type": "Point",
@@ -87,7 +145,8 @@
               "waterLevel": "5",
               "color": "#FF00FF",
               "dyp": "10",
-              "warn": 1
+              "warn": 1,
+              "url":"www.baidu.com"
             },
             "geometry": {
               "type": "Point",

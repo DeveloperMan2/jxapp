@@ -1,0 +1,104 @@
+{
+  "code": 1,
+  "message": "请求成功",
+  "data": {
+    "pump": {
+      "show": true,
+      "value": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "坳背泵",
+              "id": "10330",
+              "waterLevel": "5",
+              "color": "#FF0000",
+              "dyp": "10",
+              "warn": 1
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                115.7628822088126,
+                27.21331860494153
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "东岸泵",
+              "id": "361025000011",
+              "waterLevel": "5",
+              "color": "#0000FF",
+              "dyp": "10",
+              "warn": 1
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                115.8136639735634,
+                27.27235890658802
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "乌垄坑泵",
+              "id": "10333",
+              "waterLevel": "5",
+              "color": "#00FF00",
+              "dyp": "10",
+              "warn": 1
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                115.8130876046831,
+                27.7652491900460
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "杏家园泵",
+              "id": "361025000012",
+              "waterLevel": "5",
+              "color": "#FF00FF",
+              "dyp": "10",
+              "warn": 1
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                115.6210619533847,
+                27.36400138311395
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "name": "乌泥坑泵",
+              "id": "361025000013",
+              "waterLevel": "5",
+              "color": "#FF00FF",
+              "dyp": "10",
+              "warn": 1
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                115.6988852929088,
+                27.29997526272599
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

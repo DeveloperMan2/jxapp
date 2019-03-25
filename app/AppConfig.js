@@ -16,17 +16,19 @@ Ext.define('jxapp.AppConfig', {
             mapId: 'mapContainerId',
             mapParentId: 'mapParentContainerId',
             mapLocation: {
-                X: 115.8,
-                Y: 27.3,
-                ZOOM: 11,
-                minZoom: 3,
-                maxZoom: 20
+                X: 115.823,
+                Y: 27.364,
+                ZOOM: 10,
+                minZoom: 9,
+                maxZoom: 18
             },
             instance: null,
             baseVectorLayerGroup: null,//底图矢量组
             baseImageLayerGroup: null,//底图影像组
             businessLayerGroup: null,//业务图组
             businessLayerMap: new Ext.util.HashMap(),
+            businessBoundaryLayerGroup:null,//业务图层组关联的确权界图层
+            businessBoundaryLayerMap:new Ext.util.HashMap(),//业务图层组关联的确权界图层
             // imageBaseLayerUrl: 'https://tile-a.openstreetmap.fr/hot/{z}/{x}/{y}.png',
             // labelBaseLayerUrl: '',
             // vectorBaseLayerUrl: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -37,7 +39,7 @@ Ext.define('jxapp.AppConfig', {
             imageBaseLayerUrl: 'http://localhost:9000/{z}/{x}/{y}.png',
             labelBaseLayerUrl: 'http://localhost:9200/{z}/{x}/{y}.png',
             vectorBaseLayerUrl: 'http://localhost:9001/{z}/{x}/{y}.png',
-            leanBoundLayerUrl:'resources/kml/lean.kml',
+            leanBoundLayerUrl: 'resources/kml/lean.kml',
             imageBaseLayer: null,
             labelBaseLayer: null,
             vectorBaseLayer: null,
