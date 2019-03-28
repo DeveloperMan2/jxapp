@@ -34,7 +34,7 @@ Ext.define('jxapp.view.layercatalog.LayerCatalog', {
             checkPropagation: 'both',
             rootVisible: false,
             titleCollapse: true,
-            useArrows: true,
+            useArrows: false,
             frame: false,
             bufferedRenderer: false,
             animate: true,

@@ -92,7 +92,7 @@ Ext.define('jxapp.util.MapUtil', {
                         return mark;
                     },
                     id: key,
-                })
+                });
 
                 conf.map.businessLayerGroup.addLayer(geoLayer);
 
