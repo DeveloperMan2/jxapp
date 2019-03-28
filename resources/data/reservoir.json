@@ -16,7 +16,7 @@
               "color": "#FF0000",
               "dyp": "10",
               "warn": 1,
-              "url":"www.baidu.com",
+              "url":"http://news.cctv.com/2019/03/24/ARTIE7NPN2uS3gFNbT6nIMII190324.shtml?from=singlemessage",
               "apoint": {
                 "type":"FeatureCollection",
                 "features": [
@@ -89,7 +89,7 @@
               "color": "#0000FF",
               "dyp": "10",
               "warn": 1,
-              "url":"www.baidu.com"
+              "url":"http://news.cctv.com/2019/03/24/ARTIE7NPN2uS3gFNbT6nIMII190324.shtml?from=singlemessage"
             },
             "geometry": {
               "type": "Point",
@@ -108,7 +108,7 @@
               "color": "#00FF00",
               "dyp": "10",
               "warn": 1,
-              "url":"www.baidu.com"
+              "url":"https://list.jd.com/list.html?cat=9987,653,655"
             },
             "geometry": {
               "type": "Point",
@@ -127,7 +127,7 @@
               "color": "#FF00FF",
               "dyp": "10",
               "warn": 1,
-              "url":"www.baidu.com"
+              "url":"https://www.jd.com"
             },
             "geometry": {
               "type": "Point",
@@ -146,7 +146,7 @@
               "color": "#FF00FF",
               "dyp": "10",
               "warn": 1,
-              "url":"www.baidu.com"
+              "url":"https://list.jd.com/list.html?cat=670,671,672"
             },
             "geometry": {
               "type": "Point",

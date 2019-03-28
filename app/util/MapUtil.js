@@ -87,7 +87,7 @@ Ext.define('jxapp.util.MapUtil', {
                         });
                         mark.on('click', function (mk) {
                             let prop = mk.target.feature.properties;
-                            cu.createPopupWindow(prop["name"], prop["url"]);
+                            cu.createPopupWindow(prop["name"], prop["url"],"资源加载中...",1000);
                         });
                         return mark;
                     },

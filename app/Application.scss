@@ -4,7 +4,8 @@
  */
 $enable-font-awesome: dynamic(true);
 $common-transparent: rgba(255, 255, 255, 0.0);
-$common-color: rgb(33, 150, 243);
+$common-color: rgb(255, 255, 255);
+$common-head-color: rgb(33, 150, 243);
 $font-family: '微软雅黑';
 
 
@@ -52,9 +53,10 @@ $font-family: '微软雅黑';
 //-----common ui
 @include extjs-panel-ui(
         $ui: 'common-panel-ui',
-        $ui-header-background-color: rgba($common-color, 0.8),
+        $ui-header-background-color: rgba($common-head-color, 1),
         $ui-header-border-width: 1px,
-        $ui-body-background-color: rgba($common-color, 0.2),
+        $ui-body-background-color: rgba($common-color, 1),
         $ui-border-radius: 0px,
-        $ui-border-width: 1px 1px 1px 1px
+        $ui-border-width: 1px 1px 1px 1px,
+        $ui-header-color: #000000
 );

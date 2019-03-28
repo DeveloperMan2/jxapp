@@ -59,8 +59,8 @@ Ext.define('jxapp.AppConfig', {
             catalogPanel: null,
             //底图面板参数
             layerSwitcherParams: {
-                gapX: 320,
-                gapY: 10,//40,
+                gapX: 500,
+                gapY: 50,//40,
                 //bottomY: 0,
                 w: 136,//数值或百分比，如：100%
                 h: 90,//数值或百分比，如：100%
@@ -68,7 +68,7 @@ Ext.define('jxapp.AppConfig', {
             },
             //图例面板参数
             legendParams: {
-                gapX: 320,
+                gapX: 500,
                 gapY: 10,//40,
                 //bottomY: 0,
                 w: 160,//数值或百分比，如：100%
@@ -80,7 +80,7 @@ Ext.define('jxapp.AppConfig', {
                 gapX: 10,
                 gapY: 10,//40,
                 //bottomY: 80,
-                w: 300,//数值或百分比，如：100%
+                w: 480,//数值或百分比，如：100%
                 h: '100%',//数值或百分比，如：100%
                 align: 'tr'
             },
@@ -94,7 +94,7 @@ Ext.define('jxapp.AppConfig', {
             },
             //地图工具栏面板参数
             mapToolPanelParams: {
-                gapX: 490,
+                gapX: 500,
                 gapY: 10,
                 //w: 200,//数值或百分比，如：100%
                 h: 32,//数值或百分比，如：100%

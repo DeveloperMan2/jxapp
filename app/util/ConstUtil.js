@@ -2,29 +2,14 @@
  * Created by LBM on 2018/2/8.
  */
 var cu = {
-    config: null,//配置文件对象
-    reservoirInfoWindow: null,
-    moduleList: null,//系统模块列表
-    sysConfigUrl: 'resources/config/SystemConfig.json',
-    sysModuleUrl: 'resources/config/SystemModule.json',
-    map: null,//地图对象
-    mapView: null,//地图视图对象
-    layer: {
-        pumpLayer: null
-    },
-
     //TODO 2018-04-24---创建弹出面板
     createPopupWindow: function (name, url, msg, time) {
-        var iframe = Ext.create("Ext.ux.IFrame", {
-            frameName: 'hello',
-            src: "MyJsp.jsp"
-        });
         var me = this;
-        if (cu.reservoirInfoWindow == null) {
-            cu.reservoirInfoWindow = Ext.create('Ext.window.Window', {
+        let panel = Ext.create('Ext.window.Window', {
                 iconCls: 'fa fa-info-circle',
                 closeToolText: '关闭',
                 layout: 'fit',
+                autoRender: true,
                 bodyPadding: 0,
                 header: {
                     padding: '0 5 0 0'
@@ -40,37 +25,35 @@ var cu = {
                 closeAction: 'hide',
                 items: [{
                     xtype: 'uxiframe',
-                    id: 'skInfoiFrameId',
                     loadMask: true,
+                    src: url,
                     listeners: {
                         afterrender: function (uxif, eOpts) {
-                            me.loadHtmlContent(uxif, url, true, msg,
-                                time);
                             uxif.updateLayout();
                         },
+                        //         me.loadHtmlContent(uxif, url, true, msg,
+                        //             time);
+                        //
+                        //     },
                         scope: this
                     }
                 }],
                 listeners: {
                     close: function () {
-                        var uxif = Ext.getCmp('skInfoiFrameId');
-                        me.loadHtmlContent(uxif, 'about:blank', true,
-                            '', 0);
-                        uxif.updateLayout();
+                        // var uxif = Ext.getCmp('skInfoiFrameId');
+                        // me.loadHtmlContent(uxif, 'about:blank', true,
+                        //     '', 0);
+                        // uxif.updateLayout();
                     }
                 }
-            });
-        } else {
-            var uxif = Ext.getCmp('skInfoiFrameId');
-            me.loadHtmlContent(uxif, url, true, msg, time);
-            uxif.updateLayout();
-        }
+            }
+        );
 
         var bodyDom = Ext.getBody().dom;
-        cu.reservoirInfoWindow.setWidth(bodyDom.clientWidth / 3 * 2);
-        cu.reservoirInfoWindow.setHeight(bodyDom.clientHeight / 3 * 2);
-        cu.reservoirInfoWindow.setTitle(name);
-        cu.reservoirInfoWindow.show();
+        panel.setWidth(bodyDom.clientWidth / 3 * 2);
+        panel.setHeight(bodyDom.clientHeight / 3 * 2);
+        panel.setTitle(name);
+        panel.show();
     },
     loadHtmlContent: function (iframe, url, mask, message, millisecond) {
         if (mask) {

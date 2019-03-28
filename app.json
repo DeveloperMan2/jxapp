@@ -205,6 +205,14 @@
         {
             "path": "app/AppConfig.js",
             "bundle": false
+        },
+        {
+            "path": "app/view/rtm/Rtm.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/rtm/RtmController.js",
+            "bundle": false
         }
     ],
     /**

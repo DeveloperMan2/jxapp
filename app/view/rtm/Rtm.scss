@@ -1,0 +1,82 @@
+@include extjs-panel-ui (
+        $ui: 'rtm-tree-grid-ui',
+        $ui-header-color: #2980b9
+);
+
+//.x-tree-icon {
+//  width: 0px;
+//  height: 0px;
+//  line-height: 33px;
+//  color: #5fa2dd;
+//  font-size: 16px;
+//}
+//
+//.x-tree-icon-parent-expanded:before {
+//  content: '';
+//}
+//
+//.x-tree-icon-leaf:before {
+//  content: '';
+//}
+//
+//.x-tree-icon-parent:before {
+//  content: '';
+//}
+//
+//.x-tree-node-text {
+//  padding-left: 5px;
+//}
+//
+//.x-tree-elbow-img {
+//  width: 5px;
+//}
+//
+.rtmPanelTreeItem {
+  width: 0;
+  height: 0;
+}
+
+
+//修改显示巡查人员checkbox字体颜色
+$form-label-font-color: #000000;
+
+$panel-wrap-border-color : #FF0000;
+
+
+.jz-tool-setting {
+  background-image: url("images/jxapp/setting.png");
+  background-size: contain;
+}
+$grid-row-cell-focus-border-style:none;
+$button-color: #000000;
+$button-border-color: #ffffff;
+
+.x-grid-row-blue {
+  background-color: blue;
+  color: white;
+}
+
+.x-grid-row-yellow {
+  background-color: orange;
+  color: white;
+}
+
+.x-grid-row-green {
+  background-color: green;
+  color: white;
+}
+
+.x-grid-row-red {
+  background-color: red;
+  color: white;
+}
+
+.x-grid-row-gray {
+  background-color: #A5744D;
+  color: white;
+}
+
+.xc-location{
+  background-image: url("images/jxapp/location.png") !important;
+  background-size: contain;
+}

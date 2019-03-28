@@ -35,7 +35,7 @@ Ext.define('jxapp.view.business.Business', {
     items: [
         /* include child components here */
         {
-            xtype: 'mappatrol'
+            xtype: 'rtmview'
         }
     ]
 });
