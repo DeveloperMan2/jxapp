@@ -259,7 +259,7 @@ Ext.define('jxapp.view.rtm.Rtm', {
                 proxy: {
                     type: 'ajax',
                     //url: 'resources/data/rtmdata.json'//TODO 2018-04-23---测试本地数据加载，加载后台服务需要屏蔽该行代码。
-                    //  url: conf.rtmdataUrl+'rtmdata'
+                    //  url: conf.sys.rtmdataUrl+'rtmdata'
                 },
                 autoLoad: false
             },

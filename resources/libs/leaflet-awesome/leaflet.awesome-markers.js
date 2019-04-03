@@ -31,7 +31,8 @@
             extraClasses: '',
             icon: 'home',
             markerColor: 'blue',
-            iconColor: 'white'
+            iconColor: 'white',
+            fontSize:25
         },
 
         initialize: function (options) {
@@ -73,7 +74,7 @@
                 if(options.iconColor === 'white' || options.iconColor === 'black') {
                     iconColorClass = "icon-" + options.iconColor;
                 } else {
-                    iconColorStyle = "style='color: " + options.iconColor + ";font-size:20px;margin-top:3px' ";
+                    iconColorStyle = "style='color: " + options.iconColor + ";font-size:"+options.fontSize+"px;margin-top:"+(options.iconSize[1] - options.fontSize)+"px' ";
                 }
             }
 
@@ -109,10 +110,10 @@
         },
 
         createShadow: function () {
-            var div = document.createElement('div');
+           // var div = document.createElement('div');
 
-            this._setIconStyles(div, 'shadow');
-            return div;
+           // this._setIconStyles(div, 'shadow');
+          //  return div;
       }
     });
         
