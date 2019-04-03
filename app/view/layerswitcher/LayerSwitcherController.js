@@ -9,22 +9,78 @@ Ext.define('jxapp.view.layerswitcher.LayerSwitcherController', {
      * Called when the view is created
      */
     init: function () {
-        //todo : 底图切换代码逻辑
-        let mbtn = Ext.getCmp('mapButtonId'), ibtn = Ext.getCmp('imgButtonId');
-        //监听全局鼠标事件
-        Ext.getBody().on('mousedown', function (e, t) {
-            if (e.within(mbtn.el)) {
-                mapUtil.switchBaseLayer('vector');
-            } else if (e.within(ibtn.el)) {
-                mapUtil.switchBaseLayer('image');
-            }
-        });
     },
-    boundaryLayerControl: function (el, newValue, oldValue, eOpts) {
-        if (conf.map.businessBoundaryLayerMap) {
-           conf.map.businessBoundaryLayerMap.each(function (key, value, length) {
-                newValue ? conf.map.businessBoundaryLayerGroup.addLayer(value) : conf.map.businessBoundaryLayerGroup.removeLayer(value);
-            })
+    wrapButtonClick: function (btn) {
+        let action = btn['action'];
+        if (action === 'vector') {
+            if (conf.map.mapParams.isImageActivate) {
+                this.changeBaseLayerState(true, false);
+                conf.map.mapParams.isImageActivate = false;
+            }
+        } else {
+            if (!conf.map.mapParams.isImageActivate) {
+                this.changeBaseLayerState(false, true);
+                conf.map.mapParams.isImageActivate = true;
+            }
         }
+
+        mapUtil.switchBaseLayer(action);
+    },
+    wrapButtonMouseOver: function (btn) {
+        let action = btn['action'];
+        if (action === 'vector') {
+            if (conf.map.mapParams.isImageActivate) {
+                this.changeBaseLayerState(true, true);
+            } else {
+                this.changeBaseLayerState(true, false);
+            }
+        } else {
+            if (conf.map.mapParams.isImageActivate) {
+                this.changeBaseLayerState(false, true);
+            } else {
+                this.changeBaseLayerState(true, true);
+            }
+        }
+
+    },
+    wrapButtonMouseOut: function (btn) {
+        let action = btn['action'];
+        if (action === 'vector') {
+            if (conf.map.mapParams.isImageActivate) {
+                this.changeBaseLayerState(false, true);
+            } else {
+                this.changeBaseLayerState(true, false);
+            }
+        } else {
+            if (conf.map.mapParams.isImageActivate) {
+                this.changeBaseLayerState(false, true);
+            } else {
+                this.changeBaseLayerState(true, false);
+            }
+        }
+
+    },
+    labelButtonClick: function (btn) {
+        let action = btn['action'];
+        if (action === 'vector') {
+            if (conf.map.mapParams.isImageActivate) {
+                this.changeBaseLayerState(true, false);
+                conf.map.mapParams.isImageActivate = false;
+            }
+        } else {
+            if (!conf.map.mapParams.isImageActivate) {
+                this.changeBaseLayerState(false, true);
+                conf.map.mapParams.isImageActivate = true;
+            }
+        }
+
+        mapUtil.switchBaseLayer(action);
+    },
+    //动态调整底图切换图标状态
+    changeBaseLayerState: function (isVector, isImage) {
+        let vectorBtn = Ext.getCmp('baselayer-vector-id');
+        let imageBtn = Ext.getCmp('baselayer-image-id');
+        vectorBtn.toggle(isVector);
+        imageBtn.toggle(isImage);
     }
 });

@@ -3,6 +3,87 @@
  */
 Ext.define('jxapp.util.LayoutUtil', {
     layoutContainers: [],
+    //create  dock button for panel and bind it in the panel.
+    createDock4Panel: function (parentId, relatedPanel, relatedFloatParams) {
+        let parentContainer = Ext.getDom(parentId);
+        if (relatedPanel) {
+            if (relatedPanel['dockButton'] == null) {
+                relatedPanel['dockButton'] = Ext.create('Ext.panel.Panel', {
+                    renderTo: parentContainer,
+                    baseCls: 'commonPanelBaseCls',
+                    hidden: true,
+                    floating: true,
+                    border: false,
+                    shadow: false,
+                    collapsible: false,
+                    plain: true,
+                    draggable: false,
+                    constrain: true,
+                    simpleDrag: true,
+                    closable: false,
+                    closeAction: 'hide',
+                    closeToolText: '关闭',
+                    height: 32,
+                    width: 32,
+                    bodyPadding: 0,
+                    items: [
+                        {
+                            xtype: 'button',
+                            ui: 'common-button-ui',
+                            tooltip: relatedPanel['title'],
+                            iconCls: relatedPanel['iconCls'],
+                            width: 32,
+                            height: 32,
+                            margin: '0 0 0 0',
+                            listeners: {
+                                click: function () {
+                                    relatedPanel.show();
+                                    loUtil.refreshLayout(relatedPanel, relatedPanel['dockOption']);
+                                    relatedPanel['dockButton'].hide();
+
+                                    //临时增加相关逻辑控制
+                                    if (conf.layout.layerSwitcherPanel && conf.layout.mapToolPanel) {
+                                        conf.layout.layerSwitcherParams.gapX = conf.layout.mapToolPanelParams.gapX = 500;
+                                        loUtil.refreshLayout(conf.layout.layerSwitcherPanel, conf.layout.layerSwitcherParams);
+                                        loUtil.refreshLayout(conf.layout.mapToolPanel, conf.layout.mapToolPanelParams);
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                });
+            }
+
+            //计算停靠位置
+            let dockFloatParams = {};
+            for (let key in relatedFloatParams) {
+                dockFloatParams[key] = relatedFloatParams[key];
+            }
+            //默认大小32*32
+            dockFloatParams['w'] = 32;
+            dockFloatParams['h'] = 32;
+            loUtil.relayoutPanel(parentContainer, relatedPanel['dockButton'], dockFloatParams);
+        }
+    },
+
+    //show dock button
+    showDockButton: function (panel) {
+        panel.hide();
+        if (panel['dockButton']) {
+            panel['dockButton'].setHidden(false);
+
+            let relatedFloatParams = panel['dockOption'];
+            let dockFloatParams = {};
+            for (let key in relatedFloatParams) {
+                dockFloatParams[key] = relatedFloatParams[key];
+            }
+            //默认大小32*32
+            dockFloatParams['w'] = 32;
+            dockFloatParams['h'] = 32;
+
+            loUtil.refreshLayout(panel['dockButton'], dockFloatParams);
+        }
+    },
     //添加到布局容器中
     addToLayoutContainer: function (parentContainer, childContainer, floatParams) {
         //添加到布局容器中
@@ -31,10 +112,10 @@ Ext.define('jxapp.util.LayoutUtil', {
             this.addToLayoutContainer(parentContainer, childContainer, floatParams);
             let w = floatParams['w'];
             let h = floatParams['h'];
-            if (w == void 0 && childContainer.getWidth(w) != 2){
+            if (w == void 0 && childContainer.getWidth(w) != 2) {
                 w = childContainer.getWidth();
             }
-            if (h == void 0 && childContainer.getHeight(h) != 2){
+            if (h == void 0 && childContainer.getHeight(h) != 2) {
                 h = childContainer.getHeight();
             }
 

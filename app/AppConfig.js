@@ -22,13 +22,16 @@ Ext.define('jxapp.AppConfig', {
                 minZoom: 9,
                 maxZoom: 18
             },
+            mapParams: {
+                isImageActivate: true//当前是否激活影像底图
+            },
             instance: null,
             baseVectorLayerGroup: null,//底图矢量组
             baseImageLayerGroup: null,//底图影像组
             businessLayerGroup: null,//业务图组
             businessLayerMap: new Ext.util.HashMap(),
-            businessBoundaryLayerGroup:null,//业务图层组关联的确权界图层
-            businessBoundaryLayerMap:new Ext.util.HashMap(),//业务图层组关联的确权界图层
+            businessBoundaryLayerGroup: null,//业务图层组关联的确权界图层
+            businessBoundaryLayerMap: new Ext.util.HashMap(),//业务图层组关联的确权界图层
             // imageBaseLayerUrl: 'https://tile-a.openstreetmap.fr/hot/{z}/{x}/{y}.png',
             // labelBaseLayerUrl: '',
             // vectorBaseLayerUrl: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -59,11 +62,11 @@ Ext.define('jxapp.AppConfig', {
             catalogPanel: null,
             //底图面板参数
             layerSwitcherParams: {
-                gapX: 500,
+                gapX: 52,
                 gapY: 50,//40,
                 //bottomY: 0,
-                w: 136,//数值或百分比，如：100%
-                h: 90,//数值或百分比，如：100%
+                w: 172,//数值或百分比，如：100%
+                h: 60,//数值或百分比，如：100%
                 align: 'tr'
             },
             //图例面板参数
@@ -94,7 +97,7 @@ Ext.define('jxapp.AppConfig', {
             },
             //地图工具栏面板参数
             mapToolPanelParams: {
-                gapX: 500,
+                gapX: 52,
                 gapY: 10,
                 //w: 200,//数值或百分比，如：100%
                 h: 32,//数值或百分比，如：100%

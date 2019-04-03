@@ -36,15 +36,25 @@ Ext.define('jxapp.view.maptool.MapTool', {
             iconCls: 'jz-tool-fullextent',
             listeners: {
                 added: "addInitMapTool"
-                }
-        }
-        ,
+            }
+        },
         {
             xtype: 'button',
             tooltip: '清除地图',
             text: '清除',
             iconCls: 'jz-tool-clear',
             handler: "clearMapHandler"
+        },
+        {
+            xtype: 'button',
+            tooltip: '划界确权',
+            text: '划界确权',
+            iconCls: 'jz-tool-fullextent',
+            pressed: true,
+            enableToggle: true,
+            listeners: {
+                click:'boundaryLayerControl'
+            }
         }
     ]
 });

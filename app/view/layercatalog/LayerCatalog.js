@@ -18,7 +18,7 @@ Ext.define('jxapp.view.layercatalog.LayerCatalog', {
     },
 
     controller: 'layercatalog',
-    title: '图层面板',
+    title: '图层控制',
     iconCls: 'far fa-object-group',
     scrollable: 'y',
     margin: '0 0 0 0',

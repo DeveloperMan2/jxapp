@@ -7,10 +7,11 @@ Ext.define('jxapp.view.business.Business', {
     requires: [
         'jxapp.view.business.BusinessController',
         'jxapp.view.business.BusinessModel',
-        'jxapp.view.mappatrol.MapPatrol'
+        'jxapp.view.mappatrol.MapPatrol',
+        'jxapp.view.rtm.Rtm'
     ],
 
-    title: '操作面板',
+    title: '实时巡检监控',
     /*
     Uncomment to give this component an xtype*/
     xtype: 'business',
@@ -36,6 +37,16 @@ Ext.define('jxapp.view.business.Business', {
         /* include child components here */
         {
             xtype: 'rtmview'
+        }
+    ],
+    tools: [
+        {
+            iconCls: 'fas fa-minus',
+            tooltip: '隐藏',
+            hidden: false,
+            listeners: {
+                click: 'hidePanelHandler'
+            }
         }
     ]
 });

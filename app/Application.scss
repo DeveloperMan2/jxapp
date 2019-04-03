@@ -8,6 +8,11 @@ $common-color: rgb(255, 255, 255);
 $common-head-color: rgb(33, 150, 243);
 $font-family: '微软雅黑';
 
+$common-theme-color: rgba(12, 40, 64, 1.0);
+$baselayer-color: #3385FF;
+$common-font-color: rgba(255, 255, 255, 1.0);
+$sys-menu-bg-color: $common-theme-color;
+$common-bg-color: #3385FF;
 
 //鼠标手型
 .handCls {
@@ -58,5 +63,31 @@ $font-family: '微软雅黑';
         $ui-body-background-color: rgba($common-color, 1),
         $ui-border-radius: 0px,
         $ui-border-width: 1px 1px 1px 1px,
-        $ui-header-color: #000000
+        $ui-header-color: #FFFFFF
+);
+
+@include extjs-button-small-ui(
+        $ui: 'common-button-ui',
+        $icon-size: 24px,
+        $border-width: 0px,
+        $inner-border-width: 0px 0px 0px 0px,
+        $inner-border-color: rgba($sys-menu-bg-color, 0.0),
+        $inner-border-color-over: rgba($sys-menu-bg-color, 0.0),
+        $inner-border-color-focus: rgba($sys-menu-bg-color, 0.0),
+        $inner-border-color-pressed: rgba($sys-menu-bg-color, 0.0),
+        $inner-border-color-focus-over: rgba($sys-menu-bg-color, 0.0),
+        $inner-border-color-focus-pressed: rgba($sys-menu-bg-color, 0.0),
+        $inner-border-color-disabled: rgba($sys-menu-bg-color, 0.0),
+        $background-color: rgba($common-bg-color, 0.7),
+        $background-color-over: rgba($common-bg-color, 1.0),
+        $background-color-focus: rgba($common-bg-color, 1.0),
+        $background-color-pressed: rgba($common-bg-color, 1.0),
+        $background-color-focus-over: rgba($common-bg-color, 1.0),
+        $background-color-focus-pressed: rgba($common-bg-color, 1.0),
+        $color: $common-font-color,
+        $color-over: rgba($common-font-color, 1),
+        $color-focus: rgba($common-font-color, 1),
+        $color-pressed: rgba($common-font-color, 1),
+        $color-focus-over: rgba($common-font-color, 1),
+        $color-focus-pressed: rgba($common-font-color, 1)
 );

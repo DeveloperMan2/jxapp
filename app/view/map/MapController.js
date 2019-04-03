@@ -18,7 +18,7 @@ Ext.define('jxapp.view.map.MapController', {
         //底图面板
         this.createLayerSwitcher(conf.map.mapParentId);
         //图例面板
-        this.createLegend(conf.map.mapParentId);
+        //this.createLegend(conf.map.mapParentId);
         //业务面板
         this.createBusiness(conf.map.mapParentId);
         //图层面板
@@ -77,9 +77,13 @@ Ext.define('jxapp.view.map.MapController', {
                 renderTo: parentContainer,
                 bodyPadding: 0
             });
+
+            loUtil.createDock4Panel(parentId, conf.layout.businessPanel, conf.layout.businessParams);
         }
 
-        conf.layout.businessPanel.show();
+
+        //conf.layout.businessPanel.show();
+        loUtil.showDockButton(conf.layout.businessPanel);
         loUtil.relayoutPanel(parentContainer, conf.layout.businessPanel, conf.layout.businessParams);
     },
     //图层目录面板
@@ -94,10 +98,10 @@ Ext.define('jxapp.view.map.MapController', {
         }
         conf.layout.catalogPanel.show();
         loUtil.relayoutPanel(parentContainer, conf.layout.catalogPanel, conf.layout.catalogParams);
-   
+
     },
-     //图层工具面板
-    createMapToolPanel:function (parentId) {
+    //图层工具面板
+    createMapToolPanel: function (parentId) {
         let parentContainer = Ext.getDom(parentId);
         if (conf.layout.mapToolPanel == null) {
             conf.layout.mapToolPanel = new Ext.create('widget.maptool', {

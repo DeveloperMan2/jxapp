@@ -1,18 +1,38 @@
-//地图
-.mapIconCls {
-  @extend .handCls;
-  background-image: url("images/jxapp/map.png");
-  background-size: 100% 100%;
+.vector-icon-cls {
+  background-image: url("images/jxapp/vector.png");
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
-//影像
-.imgIconCls {
-  @extend .handCls;
+.image-icon-cls {
   background-image: url("images/jxapp/image.png");
-  background-size: 100% 100%;
+  background-size: contain;
   background-repeat: no-repeat;
 }
+
+.baselayer-title {
+  position: absolute;
+  top: 40px !important;
+}
+
+@include extjs-button-small-ui(
+        $ui: 'baselayer-button-ui',
+        $background-color: rgba($common-theme-color, 0.4),
+        $background-color-over: rgba($baselayer-color, 0.9),
+        $background-color-focus: rgba($baselayer-color, 0.9),
+        $background-color-pressed: rgba($baselayer-color, 0.9),
+        $background-color-focus-over: rgba($baselayer-color, 0.9),
+        $background-color-focus-pressed: rgba($baselayer-color, 0.9),
+        $color: $common-font-color,
+        $color-over: rgba($color: $common-font-color, 1),
+        $color-focus: rgba($common-font-color, 1),
+        $color-pressed: rgba($common-font-color, 1),
+        $color-focus-over: rgba($common-font-color, 1),
+        $color-focus-pressed: rgba($common-font-color, 1),
+        $border-width: 0px,
+        $padding: 0px,
+        $text-padding: 0px
+);
 
 @include extjs-panel-ui(
         $ui: 'layerswitcher-panel-ui',

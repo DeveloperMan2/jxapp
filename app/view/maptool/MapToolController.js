@@ -8,19 +8,27 @@ Ext.define('jxapp.view.maptool.MapToolController', {
     /**
      * Called when the view is created
      */
-    init: function() {
+    init: function () {
 
     },
-    measureDistool:null,
+    measureDistool: null,
     mapFullExtent: function () {
         //显示配置文件配置的显示范围
-       // conf.map.instance.fitBounds(conf.map.mapLocation.X);
+        // conf.map.instance.fitBounds(conf.map.mapLocation.X);
         conf.map.instance.flyTo(L.latLng(conf.map.mapLocation.Y, conf.map.mapLocation.X), conf.map.mapLocation.ZOOM, true);
     },
-    addInitMapTool:function(view, ct, index, eOpts){
+    addInitMapTool: function (view, ct, index, eOpts) {
         measureDistool = L.control.ruler({view: view}).addTo(conf.map.instance);
     },
-    clearMapHandler:function(){
-        measureDistool != null ? measureDistool.clearHandler(): null;
+    clearMapHandler: function () {
+        measureDistool != null ? measureDistool.clearHandler() : null;
+    },
+    boundaryLayerControl: function (btn) {
+        if (conf.map.businessBoundaryLayerMap) {
+            let isPressed = button['pressed'];
+            conf.map.businessBoundaryLayerMap.each(function (key, value, length) {
+                isPressed ? conf.map.businessBoundaryLayerGroup.addLayer(value) : conf.map.businessBoundaryLayerGroup.removeLayer(value);
+            })
+        }
     }
 });

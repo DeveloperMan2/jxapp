@@ -6,11 +6,7 @@ Ext.define('jxapp.view.layerswitcher.LayerSwitcher', {
 
     requires: [
         'jxapp.view.layerswitcher.LayerSwitcherModel',
-        'jxapp.view.layerswitcher.LayerSwitcherController',
-        'Ext.Img',
-        'Ext.form.field.Checkbox',
-        'Ext.tree.Panel',
-        'Ext.ux.IFrame',
+        'jxapp.view.layerswitcher.LayerSwitcherController'
     ],
 
     /*
@@ -23,63 +19,86 @@ Ext.define('jxapp.view.layerswitcher.LayerSwitcher', {
 
     controller: 'layerswitcher',
 
-    layout: {
-        type: 'vbox',
-        pack: 'start',
-        align: 'stretch'
-    },
     ui: 'layerswitcher-panel-ui',
-    bodyStyle: {
-        background: '#fff',
-        padding: '0px'
-    },
     floating: true,
     border: true,
     shadow: false,
     plain: true,
+    layout: {
+        type: 'hbox',
+        pack: 'middle',
+        align: 'center'
+    },
+    margin: '5 0 5 0',
     items: [
         {
-            layout: {
-                type: 'hbox',
-                pack: 'center',
-                align: 'middle'
-            },
+            xtype: 'container',
+            flex: 1,
             items: [
                 {
-                    xtype: 'image',
-                    id: 'mapButtonId',
-                    width: 68,
-                    height: 63,
-                    margin: '0 0 0 0',
-                    border: 1,
-                    style: {
-                        borderColor: 'white',
-                        borderStyle: 'solid'
-                    },
-                    cls: 'mapIconCls'
+                    xtype: 'button',
+                    alt: "",
+                    ui: "",
+                    width: 86,
+                    height: 60,
+                    cls: 'vector-icon-cls',
+                    action: 'vector',
+                    listeners: {
+                        'click': 'wrapButtonClick',
+                        'mouseover': 'wrapButtonMouseOver',
+                        'mouseout': 'wrapButtonMouseOut'
+                    }
                 },
                 {
-                    xtype: 'image',
-                    id: 'imgButtonId',
-                    width: 68,
-                    height: 63,
-                    margin: '0 0 0 0',
-                    border: 1,
-                    style: {
-                        borderColor: 'white',
-                        borderStyle: 'solid'
-                    },
-                    cls: 'imgIconCls'
+                    xtype: 'button',
+                    cls: 'baselayer-title',
+                    ui: 'baselayer-button-ui',
+                    id: 'baselayer-vector-id',
+                    width: 86,
+                    height: 20,
+                    pressed: true,
+                    enableToggle: true,
+                    text: '地图',
+                    action: 'vector',
+                    listeners: {
+                        'click': 'labelButtonClick'
+                    }
                 }
             ]
         },
         {
-            xtype:'checkbox',
-            id:"boundaryControl",
-            ui: 'layercontroller-checkbox-ui',
-            boxLabel: '划界确权',
-            checked:true,
-            handler:'boundaryLayerControl'
+            xtype: 'container',
+            flex: 1,
+            items: [
+                {
+                    xtype: 'button',
+                    alt: "",
+                    ui: "",
+                    width: 86,
+                    height: 60,
+                    cls: 'image-icon-cls',
+                    action: 'image',
+                    listeners: {
+                        'click': 'wrapButtonClick',
+                        'mouseover': 'wrapButtonMouseOver',
+                        'mouseout': 'wrapButtonMouseOut'
+                    }
+                },
+                {
+                    xtype: 'button',
+                    cls: 'baselayer-title',
+                    ui: 'baselayer-button-ui',
+                    id: 'baselayer-image-id',
+                    width: 86,
+                    height: 20,
+                    enableToggle: true,
+                    text: '影像',
+                    action: 'image',
+                    listeners: {
+                        'click': 'labelButtonClick'
+                    }
+                }
+            ]
         }
     ]
 });
