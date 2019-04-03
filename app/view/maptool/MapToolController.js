@@ -25,7 +25,7 @@ Ext.define('jxapp.view.maptool.MapToolController', {
     },
     boundaryLayerControl: function (btn) {
         if (conf.map.businessBoundaryLayerMap) {
-            let isPressed = button['pressed'];
+            let isPressed = btn['pressed'];
             conf.map.businessBoundaryLayerMap.each(function (key, value, length) {
                 isPressed ? conf.map.businessBoundaryLayerGroup.addLayer(value) : conf.map.businessBoundaryLayerGroup.removeLayer(value);
             })

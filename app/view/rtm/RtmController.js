@@ -89,9 +89,9 @@ Ext.define('jxapp.view.rtm.RtmController', {
 		function failureCallBack(response, opts) {
 		}
 
-		ajax.fn.execute(params, 'GET', 'resources/data/rtmstate.json', successCallBack, failureCallBack);
+		//ajax.fn.execute(params, 'GET', 'resources/data/rtmstate.json', successCallBack, failureCallBack);
 		//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
-		//ajax.fn.execute(params, 'GET', conf.rtmstateUrl + 'rtmstate',	successCallBack, failureCallBack);
+		ajax.fn.execute(params, 'GET', conf.rtmstateUrl + 'rtmstate',	successCallBack, failureCallBack);
 	},
 	daterenderHandler : function() {
 		//初始化时间控件
@@ -130,7 +130,7 @@ Ext.define('jxapp.view.rtm.RtmController', {
 		var treeCom = Ext.getCmp('rtmTreeID');
 
 		var store = treeCom.getStore();
-		//store.proxy.url = conf.rtmdataUrl + 'rtmdata';//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
+		store.proxy.url = conf.rtmdataUrl + 'rtmdata';//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
 		store.load({
 					params : {
 						time : r.time,
@@ -181,9 +181,9 @@ Ext.define('jxapp.view.rtm.RtmController', {
 		function failureCallBack(response, opts) {
 		}
 
-		ajax.fn.execute(params, 'GET', 'resources/data/rtmresdata.json', successCallBack, failureCallBack);
+		//ajax.fn.execute(params, 'GET', 'resources/data/rtmresdata.json', successCallBack, failureCallBack);
 		//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
-		//ajax.fn.execute(params, 'GET', conf.rtmresdataUrl + 'rtmresdata',	successCallBack, failureCallBack);
+		ajax.fn.execute(params, 'GET', conf.rtmresdataUrl + 'rtmresdata',	successCallBack, failureCallBack);
 	},
 	queryClear : function(text) {
 		//清空关键字
@@ -237,9 +237,9 @@ Ext.define('jxapp.view.rtm.RtmController', {
 		function failureCallBack(response, opts) {
 		}
 
-		ajax.fn.execute(params, 'GET', 'resources/data/rtmples.json', successCallBack, failureCallBack);
+		//ajax.fn.execute(params, 'GET', 'resources/data/rtmples.json', successCallBack, failureCallBack);
 		//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
-		//ajax.fn.execute(params, 'GET', conf.rtmplesUrl + 'rtmples',	successCallBack, failureCallBack);
+		ajax.fn.execute(params, 'GET', conf.rtmplesUrl + 'rtmples',	successCallBack, failureCallBack);
 	},
 	inspectorChange : function(cb, newValue, oldValue, eOpts) {
 		if (newValue) {

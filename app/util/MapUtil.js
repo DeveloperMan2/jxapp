@@ -70,7 +70,7 @@ Ext.define('jxapp.util.MapUtil', {
         function success(response) {
             let result = Ext.util.JSON.decode(response.responseText);
             if (result && result.data[key] && result.data[key].value) {
-                let markColor = "#FFFFFF";
+                let markColor = "#0000FF";
                 var iconObj = L.AwesomeMarkers.icon({
                     icon: cls,
                     iconColor: markColor,
@@ -103,7 +103,7 @@ Ext.define('jxapp.util.MapUtil', {
                     if (feature["properties"] && feature["properties"]["apoint"]) {
                         let geoBoundaryLayer = L.geoJSON(feature["properties"]["apoint"], {
                             style: function (feature) {
-                                return {color: "#FF0000", fill: false};
+                                return {color: "#FF0000", fill: true, fillRule:"nonzero"};
                             }
                         }).bindPopup(function (layer) {
                             return layer.feature.properties.name;
