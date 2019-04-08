@@ -11,7 +11,6 @@ Ext.define('jxapp.view.main.Main', {
 
     requires: [
         'Ext.plugin.Viewport',
-        'Ext.Label',
         'jxapp.view.main.MainController',
         'jxapp.view.main.MainModel',
         'jxapp.view.map.Map'
