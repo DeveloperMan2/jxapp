@@ -29,7 +29,6 @@ Ext.define('jxapp.view.rtm.Rtm', {
         pack: 'start',
         align: 'stretch'
     },
-    scrollable: true,
     items: [
         {
             xtype: 'container',
@@ -229,7 +228,7 @@ Ext.define('jxapp.view.rtm.Rtm', {
             id: 'rtmTreeID',
             margin: '0 5 5 5',
             flex: 1,
-            border: true,
+            border: false,
             reserveScrollbar: true,
             useArrows: true,
             rootVisible: false,
