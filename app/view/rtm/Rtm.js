@@ -229,7 +229,6 @@ Ext.define('jxapp.view.rtm.Rtm', {
             id: 'rtmTreeID',
             flex:1,
             margin: '0 5 5 5',
-            flex: 1,
             border: false,
             reserveScrollbar: true,
             useArrows: true,
