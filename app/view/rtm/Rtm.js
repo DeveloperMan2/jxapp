@@ -2,22 +2,9 @@
  * Created by LBM on 2017/12/16.
  */
 Ext.define('jxapp.view.rtm.Rtm', {
-    extend: 'Ext.Container',
+    extend: 'Ext.panel.Panel',
 
     requires: [
-        'Ext.container.Container',
-        'Ext.data.TreeStore',
-        'Ext.data.proxy.Ajax',
-        'Ext.form.Label',
-        'Ext.form.field.Checkbox',
-        'Ext.form.field.Date',
-        'Ext.form.field.Text',
-        'Ext.grid.column.Action',
-        'Ext.layout.container.HBox',
-        'Ext.layout.container.VBox',
-        'Ext.selection.RowModel',
-        'Ext.tree.Column',
-        'Ext.tree.Panel',
         'jxapp.plugin.SearchField',
         'jxapp.view.rtm.RtmController',
         'jxapp.view.rtm.RtmModel'
@@ -42,7 +29,7 @@ Ext.define('jxapp.view.rtm.Rtm', {
         pack: 'start',
         align: 'stretch'
     },
-
+    scrollable: true,
     items: [
         {
             xtype: 'container',
@@ -236,8 +223,7 @@ Ext.define('jxapp.view.rtm.Rtm', {
         {
             xtype: 'component',
             height: 5
-        }
-        ,
+        },
         {
             xtype: 'treepanel',
             id: 'rtmTreeID',
@@ -245,20 +231,19 @@ Ext.define('jxapp.view.rtm.Rtm', {
             flex: 1,
             border: true,
             reserveScrollbar: true,
-            useArrows: false,
+            useArrows: true,
             rootVisible: false,
             sealedColumns: true,
             selModel: 'rowmodel',
             multiSelect: false,
             singleExpand: false,
             scrollable: true,
-            autoLoad: false,
             store: {
                 type: 'tree',
                 folderSort: false,
                 proxy: {
                     type: 'ajax',
-                    //url: 'resources/data/rtmdata.json'//TODO 2018-04-23---测试本地数据加载，加载后台服务需要屏蔽该行代码。
+                    url: 'resources/data/rtmdata.json'//TODO 2018-04-23---测试本地数据加载，加载后台服务需要屏蔽该行代码。
                     //  url: conf.sys.rtmdataUrl+'rtmdata'
                 },
                 autoLoad: false
@@ -272,7 +257,7 @@ Ext.define('jxapp.view.rtm.Rtm', {
                 beforeitemcollapse: function (node, index, item, eOpts) {
                     node.data.iconCls = 'rtmPanelTreeItem';
                 },
-                beforeitemappend:function (pt, node, eOpts){
+                beforeitemappend: function (pt, node, eOpts) {
                     node.data.iconCls = 'rtmPanelTreeItem';
                 }
             }
@@ -280,8 +265,7 @@ Ext.define('jxapp.view.rtm.Rtm', {
             selModel: {
                 mode: "single",
                 selection: "rowmodel"
-            }
-            ,
+            },
             viewConfig: {
                 getRowClass: function (record, rowIndex, rowParams, store) {
                     var cls = "";
@@ -306,8 +290,7 @@ Ext.define('jxapp.view.rtm.Rtm', {
                     }
                     return cls;
                 }
-            }
-            ,
+            },
             columns: [
                 {
                     xtype: 'treecolumn',
