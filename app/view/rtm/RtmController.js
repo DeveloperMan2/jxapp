@@ -130,7 +130,7 @@ Ext.define('jxapp.view.rtm.RtmController', {
         var treeCom = Ext.getCmp('rtmTreeID');
 
         var store = treeCom.getStore();
-       // store.proxy.url = 'resources/data/rtmdata.json';
+        // store.proxy.url = 'resources/data/rtmdata.json';
         store.proxy.url = conf.sys.rtmdataUrl + 'rtmdata';//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
         store.load({
             params: {
