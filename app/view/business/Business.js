@@ -32,11 +32,11 @@ Ext.define('jxapp.view.business.Business', {
     floating: true,
     border: true,
     shadow: false,
-    plain: true,
     items: [
         /* include child components here */
         {
-            xtype: 'rtmview'
+            xtype: 'rtmview',
+            flex:1
         }
     ],
     tools: [
