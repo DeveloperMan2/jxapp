@@ -130,8 +130,8 @@ Ext.define('jxapp.view.rtm.RtmController', {
         var treeCom = Ext.getCmp('rtmTreeID');
 
         var store = treeCom.getStore();
-        store.proxy.url = 'resources/data/rtmdata.json';
-        //store.proxy.url = conf.sys.rtmdataUrl + 'rtmdata';//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
+       // store.proxy.url = 'resources/data/rtmdata.json';
+        store.proxy.url = conf.sys.rtmdataUrl + 'rtmdata';//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
         store.load({
             params: {
                 time: r.time,
@@ -139,17 +139,15 @@ Ext.define('jxapp.view.rtm.RtmController', {
             }, //参数
 
             callback: function (records, options, success) {
-                if (success) {
+                if (success && records && records.length > 0) {
                     store.loadData(records[0].data);
                     treeCom.collapseAll();
                     treeCom.expandAll();
                     treeCom.updateLayout();
 
-                    if (records && records.length > 0) {
-                        var nodes = records[0]['data']['children'];
-                        if (r._self) {
-                            r._self.createReservoir(nodes);
-                        }
+                    var nodes = records[0]['data']['children'];
+                    if (r._self) {
+                        r._self.createReservoir(nodes);
                     }
                 }
             },
@@ -323,8 +321,7 @@ Ext.define('jxapp.view.rtm.RtmController', {
         var me = this;
         if (r.reservoirInfoWindow == null) {
             r.reservoirInfoWindow = Ext.create('Ext.window.Window', {
-                ui: 'window-panel-ui',
-                iconCls: 'fa fa-info-circle',
+                iconCls: 'fa fa-info-crircle',
                 closeToolText: '关闭',
                 layout: 'fit',
                 bodyPadding: 0,
@@ -378,7 +375,7 @@ Ext.define('jxapp.view.rtm.RtmController', {
     rowclickHandler: function (td, record, element, rowIndex, e, eOpts) {
         if (e.position.column.xtype != 'actioncolumn') {
             var name = record.get('task');
-            var url = record.get('http');
+            var url = record.get('url');
             var type = record.get('type');
             if (url && "reservoir" != type) {
                 this.createPopupWindow(name, url, '巡查路线信息加载中...', 1000);

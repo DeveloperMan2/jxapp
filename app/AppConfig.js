@@ -9,10 +9,10 @@ Ext.define('jxapp.AppConfig', {
             title: '运行管理平台',
             initModule: 'map', /**初始化模块*/
             serviceUrl: 'http://localhost:8080/jxapp/',
-            rtmstateUrl: '/index/task/xjTaskStatistics/',
-            rtmdataUrl: '/index/task/xjTask/',
-            rtmplesUrl: '/index/task/xjTaskTrail/',
-            rtmresdataUrl: '/index/task/',
+            rtmstateUrl: 'http://localhost:8080/2019laxj/index/task/xjTaskStatistics/',
+            rtmdataUrl: 'http://localhost:8080/2019laxj/index/task/xjTask/',
+            rtmplesUrl: 'http://localhost:8080/2019laxj/index/task/xjTaskTrail/',
+            rtmresdataUrl: 'http://localhost:8080/2019laxj/index/task/',
             pageSize: 10
         },
         map: {

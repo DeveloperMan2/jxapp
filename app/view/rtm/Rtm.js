@@ -9,7 +9,7 @@ Ext.define('jxapp.view.rtm.Rtm', {
         'jxapp.view.rtm.RtmController',
         'jxapp.view.rtm.RtmModel'
     ],
-
+    id:"rtmPanel",
     /*
      Uncomment to give this component an xtype*/
     xtype: 'rtmview',
@@ -32,6 +32,7 @@ Ext.define('jxapp.view.rtm.Rtm', {
     items: [
         {
             xtype: 'container',
+            height: 40,
             layout: {
                 type: 'hbox',
                 pack: 'start',
@@ -226,6 +227,7 @@ Ext.define('jxapp.view.rtm.Rtm', {
         {
             xtype: 'treepanel',
             id: 'rtmTreeID',
+            flex:1,
             margin: '0 5 5 5',
             flex: 1,
             border: false,
@@ -242,7 +244,7 @@ Ext.define('jxapp.view.rtm.Rtm', {
                 folderSort: false,
                 proxy: {
                     type: 'ajax',
-                    url: 'resources/data/rtmdata.json'//TODO 2018-04-23---测试本地数据加载，加载后台服务需要屏蔽该行代码。
+                   // url: 'resources/data/rtmdata.json'//TODO 2018-04-23---测试本地数据加载，加载后台服务需要屏蔽该行代码。
                     //  url: conf.sys.rtmdataUrl+'rtmdata'
                 },
                 autoLoad: false
