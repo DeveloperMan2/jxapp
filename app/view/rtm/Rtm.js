@@ -9,7 +9,6 @@ Ext.define('jxapp.view.rtm.Rtm', {
         'jxapp.view.rtm.RtmController',
         'jxapp.view.rtm.RtmModel'
     ],
-    id:"rtmPanel",
     /*
      Uncomment to give this component an xtype*/
     xtype: 'rtmview',
