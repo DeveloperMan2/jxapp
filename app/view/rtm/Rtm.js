@@ -5,6 +5,19 @@ Ext.define('jxapp.view.rtm.Rtm', {
     extend: 'Ext.panel.Panel',
 
     requires: [
+        'Ext.container.Container',
+        'Ext.data.TreeStore',
+        'Ext.data.proxy.Ajax',
+        'Ext.form.Label',
+        'Ext.form.field.Checkbox',
+        'Ext.form.field.Date',
+        'Ext.form.field.Text',
+        'Ext.grid.column.Action',
+        'Ext.layout.container.HBox',
+        'Ext.layout.container.VBox',
+        'Ext.selection.RowModel',
+        'Ext.tree.Column',
+        'Ext.tree.Panel',
         'jxapp.plugin.SearchField',
         'jxapp.view.rtm.RtmController',
         'jxapp.view.rtm.RtmModel'
@@ -28,7 +41,6 @@ Ext.define('jxapp.view.rtm.Rtm', {
         pack: 'start',
         align: 'stretch'
     },
-    scrollable: false,
     items: [
         {
             xtype: 'container',
@@ -229,7 +241,7 @@ Ext.define('jxapp.view.rtm.Rtm', {
             id: 'rtmTreeID',
             flex:1,
             margin: '0 5 5 5',
-            border: true,
+            border: false,
             reserveScrollbar: true,
             useArrows: true,
             rootVisible: false,
