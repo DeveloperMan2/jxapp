@@ -25,7 +25,7 @@
               "warnlevel": 125,
               "duration": "",
               "state": "巡检中",
-              "url": "http://www.baidu.com?taskid=1111",
+              "http": "http://www.baidu.com?taskid=1111",
               "inspector": "",
               "phone": "",
               "expanded": true,
@@ -41,7 +41,7 @@
                   "phone": "18888889999",
                   "lat": 27.454394,
                   "lgt": 115.810164,
-                  "url": "http://image.baidu.com?id=1111",
+                  "http": "http://image.baidu.com?id=1111",
                   "leaf": true
                 },
                 {
@@ -52,7 +52,7 @@
                   "phone": "18888889999",
                   "lat": 27.37,
                   "lgt": 115.825,
-                  "url": "http://image.baidu.com?id=1111",
+                  "http": "http://image.baidu.com?id=1111",
                   "leaf": true
                 },
                 {
@@ -63,7 +63,7 @@
                   "phone": "18888889999",
                   "lat": 27.33,
                   "lgt": 115.845,
-                  "url": "http://image.baidu.com?id=1111",
+                  "http": "http://image.baidu.com?id=1111",
                   "leaf": true
                 }
               ]
@@ -86,7 +86,7 @@
               "warnlevel": 120.8,
               "duration": "",
               "state": "正常",
-              "url": "http://www.baidu.com?taskid=1111",
+              "http": "http://www.baidu.com?taskid=1111",
               "inspector": "",
               "phone": "",
               "expanded": true,
@@ -102,7 +102,7 @@
                   "phone": "18888889999",
                   "lat": 27.347,
                   "lgt": 115.8251,
-                  "url": "http://image.baidu.com?id=1111",
+                  "http": "http://image.baidu.com?id=1111",
                   "leaf": true
                 },
                 {
@@ -113,7 +113,7 @@
                   "phone": "18888889999",
                   "lat": 27.227,
                   "lgt": 115.8455,
-                  "url": "http://image.baidu.com?id=1111",
+                  "http": "http://image.baidu.com?id=1111",
                   "leaf": true
                 },
                 {
@@ -124,7 +124,7 @@
                   "phone": "18888889999",
                   "lat": 27.356,
                   "lgt": 115.925,
-                  "url": "http://image.baidu.com?id=1111",
+                  "http": "http://image.baidu.com?id=1111",
                   "leaf": true
                 }
               ]
@@ -147,7 +147,7 @@
               "warnlevel": 120.3,
               "duration": "",
               "state": "未巡检",
-              "url": "http://www.baidu.com?taskid=1111",
+              "http": "http://www.baidu.com?taskid=1111",
               "inspector": "",
               "phone": "",
               "lat": 27.31127,
@@ -163,7 +163,7 @@
                   "phone": "18888889999",
                   "lat": 27.7737,
                   "lgt": 115.825,
-                  "url": "http://image.baidu.com?id=1111",
+                  "http": "http://image.baidu.com?id=1111",
                   "leaf": true
                 },
                 {
@@ -174,7 +174,7 @@
                   "phone": "18888889999",
                   "lat": 27.454394,
                   "lgt": 115.310164,
-                  "url": "http://image.baidu.com?id=1111",
+                  "http": "http://image.baidu.com?id=1111",
                   "leaf": true
                 },
                 {
@@ -185,7 +185,7 @@
                   "phone": "18888889999",
                   "lat": 27.454394,
                   "lgt": 115.310164,
-                  "url": "http://image.baidu.com?id=1111",
+                  "http": "http://image.baidu.com?id=1111",
                   "leaf": true
                 }
               ]
@@ -208,7 +208,7 @@
               "warnlevel": 110.3,
               "duration": "",
               "state": "异常",
-              "url": "http://www.baidu.com?taskid=1111",
+              "http": "http://www.baidu.com?taskid=1111",
               "inspector": "",
               "phone": "",
               "lat": 27.314394,
@@ -224,7 +224,7 @@
                   "phone": "18888889999",
                   "lat": 27.454394,
                   "lgt": 115.310164,
-                  "url": "http://image.baidu.com?id=1111",
+                  "http": "http://image.baidu.com?id=1111",
                   "leaf": true
                 },
                 {
@@ -235,7 +235,7 @@
                   "phone": "18888889999",
                   "lat": 27.454394,
                   "lgt": 115.310164,
-                  "url": "http://image.baidu.com?id=1111",
+                  "http": "http://image.baidu.com?id=1111",
                   "leaf": true
                 },
                 {
@@ -246,7 +246,7 @@
                   "phone": "18888889999",
                   "lat": 27.454394,
                   "lgt": 115.310164,
-                  "url": "http://image.baidu.com?id=1111",
+                  "http": "http://image.baidu.com?id=1111",
                   "leaf": true
                 }
               ]

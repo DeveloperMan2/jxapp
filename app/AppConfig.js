@@ -8,11 +8,11 @@ Ext.define('jxapp.AppConfig', {
         sys: {
             title: '运行管理平台',
             initModule: 'map', /**初始化模块*/
-            serviceUrl: 'http://localhost:9090/jxapp/',
-            rtmstateUrl: 'http://localhost:9090/2019laxj/index/task/xjTaskStatistics/',
-            rtmdataUrl: 'http://localhost:9090/2019laxj/index/task/xjTask/',
-            rtmplesUrl: 'http://localhost:9090/2019laxj/index/task/xjTaskTrail/',
-            rtmresdataUrl: 'http://localhost:9090/2019laxj/index/task/',
+            serviceUrl: 'http://localhost:8080/jxapp/',
+            rtmstateUrl: 'http://localhost:8080/2019laxj/index/task/xjTaskStatistics/',
+            rtmdataUrl: 'http://localhost:8080/2019laxj/index/task/xjTask/',
+            rtmplesUrl: 'http://localhost:8080/2019laxj/index/task/xjTaskTrail/',
+            rtmresdataUrl: 'http://localhost:8080/2019laxj/index/task/',
             pageSize: 10
         },
         map: {
@@ -96,7 +96,7 @@ Ext.define('jxapp.AppConfig', {
                 gapX: 10,
                 gapY: 10,//40,
                 w: 200,//数值或百分比，如：100%
-                h: 330,//数值或百分比，如：100%
+                h: 340,//数值或百分比，如：100%
                 align: 'tl'
             },
             //地图工具栏面板参数

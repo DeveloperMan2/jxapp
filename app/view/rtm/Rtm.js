@@ -295,7 +295,7 @@ Ext.define('jxapp.view.rtm.Rtm', {
                             case '进行中' :
                                 cls = 'x-grid-row-blue';
                                 break;
-                            case '作废' :
+                            case '异常' :
                                 cls = 'x-grid-row-red';
                                 break;
                         }

@@ -89,7 +89,7 @@ Ext.define('jxapp.view.rtm.RtmController', {
         function failureCallBack(response, opts) {
         }
 
-        //ajax.fn.execute(params, 'GET', 'resources/data/rtmstate.json', successCallBack, failureCallBack);
+       // ajax.fn.execute(params, 'GET', 'resources/data/rtmstate.json', successCallBack, failureCallBack);
         //TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
         ajax.fn.execute(params, 'GET', conf.sys.rtmstateUrl + 'rtmstate', successCallBack, failureCallBack);
     },
@@ -130,8 +130,8 @@ Ext.define('jxapp.view.rtm.RtmController', {
         var treeCom = Ext.getCmp('rtmTreeID');
 
         var store = treeCom.getStore();
-        // store.proxy.url = 'resources/data/rtmdata.json';
-        store.proxy.url = conf.sys.rtmdataUrl + 'rtmdata';//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
+         store.proxy.url = 'resources/data/rtmdata.json';
+        //store.proxy.url = conf.sys.rtmdataUrl + 'rtmdata';//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
         store.load({
             params: {
                 time: r.time,
@@ -375,7 +375,7 @@ Ext.define('jxapp.view.rtm.RtmController', {
     rowclickHandler: function (td, record, element, rowIndex, e, eOpts) {
         if (e.position.column.xtype != 'actioncolumn') {
             var name = record.get('task');
-            var url = record.get('url');
+            var url = record.get('http');
             var type = record.get('type');
             if (url && "reservoir" != type) {
                 this.createPopupWindow(name, url, '巡查路线信息加载中...', 1000);
